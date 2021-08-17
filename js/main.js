@@ -184,12 +184,12 @@ function round(a, b, c, d) {
 
 document.write("Round 1" + `<br>`);
 
-roundA = round(atq, def, atq2, def2);
+roundA = round(playerOne["atq"], playerOne["def"], playerTwo["atq"], playerTwo["def"]);
 console.log(`resultado de roundA ${roundA}<br>`);
 
 document.write("Round 2" + `<br>`);
 
-roundB = round(spd, int, spd2, int2);
+roundB = round(playerOne["spd"], playerOne["int"], playerTwo["spd"], playerTwo["int"]);
 console.log(`resultado de roundB ${roundB}<br>`);
 
 //Compara resultados de los round para definir ganador o empate
@@ -224,11 +224,11 @@ document.write("La batalla a finalizado..." + `<br>`);
 //------RESULTADO------//
 
 if (winner === true) {
-    document.write(player1 + " ha Ganado!");
+    document.write(playerOne["nombre"] + " ha Ganado!");
 } else if (winner === false) {
-    document.write(player2 + " a ganado esta batalla");
+    document.write(playerTwo["nombre"] + " a ganado esta batalla");
 } else {
-    document.write(player1 + " y " + player2 + " quedaron empatados!");
+    document.write(playerOne["nombre"] + " y " + playerTwo["nombre"] + " quedaron empatados!");
 }
 
 //------SALIDA/SALUDO------//
