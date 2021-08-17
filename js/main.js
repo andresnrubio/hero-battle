@@ -4,13 +4,23 @@ function saludo() {
 }
 
 //------INGRESO DE PLAYER------//
+
+function peleador(nombre, atq, def, spd, int) {
+    this.nombre = nombre;
+    this.atq = atq;
+    this.def = def;
+    this.spd = spd;
+    this.int = int;
+    this.id = id;
+    this.saludoPeleador = function() { console.log("Hola soy " + this.nombre + " y ganaré esta pelea") }
+}
+
 function solicitarNombre(player) {
     nombre = prompt("Ingrese el nombre " + player);
     return nombre;
 }
 
-let player1 = solicitarNombre("su luchador");
-let player2 = solicitarNombre("su contrincante");
+nombre = solicitarNombre("su luchador");
 
 //CARGA VALORES ATQ / DEF / SPD / INT
 let atq = prompt("Ingresa tu nivel de ataque");
@@ -25,16 +35,116 @@ console.log(`spd = ${spd}`)
 let int = prompt("Ingresa tu nivel de inteligencia");
 int = parseInt(int);
 console.log(`int = ${int}`)
+id = 0;
+
+const playerOne = new peleador(nombre, atq, def, spd, int, id);
+
+console.log(playerOne["nombre"]);
+console.log(playerOne["atq"]);
+console.log(playerOne["def"]);
+console.log(playerOne["spd"]);
+console.log(playerOne["int"]);
+console.log(playerOne["id"]);
+playerOne.saludoPeleador();
 
 //Para simplificar los valores del segundo jugador ya estan definidos
-atq2 = 55;
-def2 = 70;
-spd2 = 77;
-int2 = 66;
 
+const batman = new peleador("Batman", 13, 12, 20, 90, 1);
+const flash = new peleador("Flash", 13, 12, 20, 90, 2);
+const ironMan = new peleador("Iron Man", 75, 60, 50, 90, 3);
+const capitanAmerica = new peleador("Capitan America", 13, 12, 20, 90, 4);
+const superman = new peleador("Superman", 13, 12, 20, 90, 5);
+const scarletWitch = new peleador("Scarlet Witch", 13, 12, 20, 90, 6);
+const saitama = new peleador("Saitama", 100, 95, 85, 50, 7);
+
+
+function randomId(min, max) {
+    id = Math.random() * (max - min) + min;
+
+    id = Math.round(id)
+    console.log("id " + id)
+    return (id);
+}
+
+const playerTwo = new peleador("playerTwo", 0, 0, 0, 0, 0);
+
+playerTwo["id"] = randomId(1, 2);
+
+console.log(playerTwo["nombre"]);
+console.log(playerTwo["atq"]);
+console.log(playerTwo["def"]);
+console.log(playerTwo["spd"]);
+console.log(playerTwo["int"]);
+console.log(playerTwo["id"]);
+
+
+switch (playerTwo["id"]) {
+    case 1:
+        playerTwo["nombre"] = batman["nombre"];
+        playerTwo["atq"] = batman["atq"];
+        playerTwo["def"] = batman["def"];
+        playerTwo["spd"] = batman["spd"];
+        playerTwo["int"] = batman["int"];
+        break;
+    case 2:
+        playerTwo["nombre"] = flash["nombre"];
+        playerTwo["atq"] = flash["atq"];
+        playerTwo["def"] = flash["def"];
+        playerTwo["spd"] = flash["spd"];
+        playerTwo["int"] = flash["int"];
+        break;
+        /* case 3:
+            playerTwo["nombre"];
+            playerTwo["atq"];
+            playerTwo["def"];
+            playerTwo["spd"];
+            playerTwo["int"];
+            break;
+        case 4:
+            playerTwo["nombre"];
+            playerTwo["atq"];
+            playerTwo["def"];
+            playerTwo["spd"];
+            playerTwo["int"];
+            break;
+        case 5:
+            playerTwo["nombre"];
+            playerTwo["atq"];
+            playerTwo["def"];
+            playerTwo["spd"];
+            playerTwo["int"];
+            break;
+        case 6:
+            playerTwo["nombre"];
+            playerTwo["atq"];
+            playerTwo["def"];
+            playerTwo["spd"];
+            playerTwo["int"];
+            break;
+        case 7:
+            playerTwo["nombre"];
+            playerTwo["atq"];
+            playerTwo["def"];
+            playerTwo["spd"];
+            playerTwo["int"];
+            break; */
+    default:
+        break;
+}
+
+
+console.log(playerTwo["nombre"]);
+console.log(playerTwo["atq"]);
+console.log(playerTwo["def"]);
+console.log(playerTwo["spd"]);
+console.log(playerTwo["int"]);
+console.log(playerTwo["id"]);
+
+
+playerTwo.saludoPeleador();
 //------COMBATE------//
 
-document.write("Da inicio la batalla entre " + player1 + " y " + player2 + "!" + `<br>`);
+document.write("Da inicio la batalla entre " + playerOne["nombre"] + " y " + playerTwo["nombre"] + "!" + `<br>`);
 
 const diferencia = (a, b) => a - b;
 
