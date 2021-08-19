@@ -51,12 +51,32 @@ playerOne.saludoPeleador();
 
 const batman = new peleador("Batman", 13, 12, 20, 90, 1);
 const flash = new peleador("Flash", 13, 12, 20, 90, 2);
-const ironMan = new peleador("Iron Man", 75, 60, 50, 90, 3);
+const superman = new peleador("Superman", 13, 12, 20, 90, 3);
 const capitanAmerica = new peleador("Capitan America", 13, 12, 20, 90, 4);
-const superman = new peleador("Superman", 13, 12, 20, 90, 5);
+const ironMan = new peleador("Iron Man", 75, 60, 50, 90, 5);
 const scarletWitch = new peleador("Scarlet Witch", 13, 12, 20, 90, 6);
 const saitama = new peleador("Saitama", 100, 95, 85, 50, 7);
 
+
+// se declara y pushean los objetos dentro del array
+const heroes = []
+
+heroes.push(batman);
+heroes.push(flash);
+heroes.push(superman);
+heroes.push(capitanAmerica);
+heroes.push(ironMan);
+heroes.push(scarletWitch);
+heroes.push(saitama);
+
+console.log(heroes);
+
+// se ordena array que contiene heroes por su poder de ataque
+
+const ordenados = heroes.sort((a, b) =>
+    a.atq < b.atq ? 1 : b.atq < a.atq ? -1 : 0
+);
+console.log(ordenados);
 
 function randomId(min, max) {
     id = Math.random() * (max - min) + min;
@@ -93,41 +113,41 @@ switch (playerTwo["id"]) {
         playerTwo["spd"] = flash["spd"];
         playerTwo["int"] = flash["int"];
         break;
-        /* case 3:
-            playerTwo["nombre"];
-            playerTwo["atq"];
-            playerTwo["def"];
-            playerTwo["spd"];
-            playerTwo["int"];
-            break;
-        case 4:
-            playerTwo["nombre"];
-            playerTwo["atq"];
-            playerTwo["def"];
-            playerTwo["spd"];
-            playerTwo["int"];
-            break;
-        case 5:
-            playerTwo["nombre"];
-            playerTwo["atq"];
-            playerTwo["def"];
-            playerTwo["spd"];
-            playerTwo["int"];
-            break;
-        case 6:
-            playerTwo["nombre"];
-            playerTwo["atq"];
-            playerTwo["def"];
-            playerTwo["spd"];
-            playerTwo["int"];
-            break;
-        case 7:
-            playerTwo["nombre"];
-            playerTwo["atq"];
-            playerTwo["def"];
-            playerTwo["spd"];
-            playerTwo["int"];
-            break; */
+    case 3:
+        playerTwo["nombre"] = superman["nombre"];
+        playerTwo["atq"] = superman["atq"];
+        playerTwo["def"] = superman["def"];
+        playerTwo["spd"] = superman["spd"];
+        playerTwo["int"] = superman["int"];
+        break;
+    case 4:
+        playerTwo["nombre"] = flash["nombre"];
+        playerTwo["atq"] = flash["atq"];
+        playerTwo["def"] = flash["def"];
+        playerTwo["spd"] = flash["spd"];
+        playerTwo["int"] = flash["int"];
+        break;
+    case 5:
+        playerTwo["nombre"] = flash["nombre"];
+        playerTwo["atq"] = flash["atq"];
+        playerTwo["def"] = flash["def"];
+        playerTwo["spd"] = flash["spd"];
+        playerTwo["int"] = flash["int"];
+        break;
+    case 6:
+        playerTwo["nombre"] = flash["nombre"];
+        playerTwo["atq"] = flash["atq"];
+        playerTwo["def"] = flash["def"];
+        playerTwo["spd"] = flash["spd"];
+        playerTwo["int"] = flash["int"];
+        break;
+    case 7:
+        playerTwo["nombre"] = flash["nombre"];
+        playerTwo["atq"] = flash["atq"];
+        playerTwo["def"] = flash["def"];
+        playerTwo["spd"] = flash["spd"];
+        playerTwo["int"] = flash["int"];
+        break;
     default:
         break;
 }
