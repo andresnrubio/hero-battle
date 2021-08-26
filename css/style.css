@@ -16,7 +16,7 @@
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     font-size: 1.5rem;
     text-align: center;
@@ -25,19 +25,45 @@
     padding: 10 50px 10 50px;
 }
 
+#batalla {
+    width: 350px;
+}
+
+#encuentro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 #rounds {
     display: flex;
+    flex-direction: column;
     margin: 0 auto;
     justify-content: center;
-    padding: 15px;
+    padding: 5px;
     background-color: burlywood;
-    width: 500px;
-    height: 1200px;
+    /*     width: 500px;
+    height: 1200px; */
+}
+
+#finalBaner {
+    font-size: 3rem;
+    padding: 1rem;
+    color: black;
+    opacity: 100%;
+}
+
+#final {
+    position: absolute;
+    display: block;
+    width: 50%;
+    background-color: cornflowerblue;
 }
 
 #vs {
     display: flex;
-    width: 150px;
+    width: 50px;
 }
 
 #jugadorUno {
