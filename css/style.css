@@ -9,13 +9,47 @@
 .body {
     display: flex;
     align-content: center;
+    color: black;
 }
 
 .cuadro {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     font-size: 1.5rem;
-    background-color: black;
     text-align: center;
-    color: rgb(255, 255, 255);
     padding: 2rem;
     line-height: 2.5rem;
+    padding: 10 50px 10 50px;
+}
+
+#rounds {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 15px;
+    background-color: burlywood;
+    width: 500px;
+    height: 1200px;
+}
+
+#vs {
+    display: flex;
+    width: 150px;
+}
+
+#jugadorUno {
+    display: flex;
+    width: 350px;
+    height: 500px;
+    background-color: rgb(126, 126, 126);
+}
+
+#jugadorDos {
+    display: flex;
+    width: 350px;
+    height: 500px;
+    background-color: rgb(126, 126, 126);
 }

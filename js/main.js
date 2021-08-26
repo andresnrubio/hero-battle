@@ -5,22 +5,24 @@ function saludo() {
 
 //------INGRESO DE PLAYER------//
 
-function peleador(nombre, atq, def, spd, int) {
+function peleador(nombre, atq, def, spd, int, id, img) {
     this.nombre = nombre;
     this.atq = atq;
     this.def = def;
     this.spd = spd;
     this.int = int;
     this.id = id;
+    this.img = img;
     this.saludoPeleador = function() { console.log("Hola soy " + this.nombre + " y ganaré esta pelea") }
 }
 
+/*
 function solicitarNombre(player) {
     nombre = prompt("Ingrese el nombre " + player);
     return nombre;
 }
 
-nombre = solicitarNombre("su luchador");
+ nombre = solicitarNombre("su luchador");
 
 //CARGA VALORES ATQ / DEF / SPD / INT
 let atq = prompt("Ingresa tu nivel de ataque");
@@ -37,7 +39,11 @@ int = parseInt(int);
 console.log(`int = ${int}`)
 id = 0;
 
+
 const playerOne = new peleador(nombre, atq, def, spd, int, id);
+
+ */
+const playerOne = new peleador("CARLOS", 13, 12, 20, 90, 1, "no-avatar.jfif");
 
 console.log(playerOne["nombre"]);
 console.log(playerOne["atq"]);
@@ -47,15 +53,17 @@ console.log(playerOne["int"]);
 console.log(playerOne["id"]);
 playerOne.saludoPeleador();
 
+
+
 //Para simplificar los valores del segundo jugador ya estan definidos
 
-const batman = new peleador("Batman", 13, 12, 20, 90, 1);
-const flash = new peleador("Flash", 13, 12, 20, 90, 2);
-const superman = new peleador("Superman", 13, 12, 20, 90, 3);
-const capitanAmerica = new peleador("Capitan America", 13, 12, 20, 90, 4);
-const ironMan = new peleador("Iron Man", 75, 60, 50, 90, 5);
-const scarletWitch = new peleador("Scarlet Witch", 13, 12, 20, 90, 6);
-const saitama = new peleador("Saitama", 100, 95, 85, 50, 7);
+const batman = new peleador("Batman", 13, 12, 20, 90, 1, "batman-prime-earth.jpg");
+const flash = new peleador("Flash", 13, 12, 20, 90, 2, "the-flash-prime-earth.jpg");
+const superman = new peleador("Superman", 13, 12, 20, 90, 3, "superman-prime-earth.jpg");
+const capitanAmerica = new peleador("Capitan America", 13, 12, 20, 90, 4, "captain-america-earth-616.jpg");
+const ironMan = new peleador("Iron Man", 75, 60, 50, 90, 5, "iron-man-earth-616.jpg");
+const scarletWitch = new peleador("Scarlet Witch", 13, 12, 20, 90, 6, "scarlet-witch-earth-616.jpg");
+const saitama = new peleador("Saitama", 100, 95, 85, 50, 7, "saitama-opm.jpg");
 
 
 // se declara y pushean los objetos dentro del array
@@ -105,6 +113,7 @@ switch (playerTwo["id"]) {
         playerTwo["def"] = batman["def"];
         playerTwo["spd"] = batman["spd"];
         playerTwo["int"] = batman["int"];
+        playerTwo["img"] = batman["img"];
         break;
     case 2:
         playerTwo["nombre"] = flash["nombre"];
@@ -112,6 +121,7 @@ switch (playerTwo["id"]) {
         playerTwo["def"] = flash["def"];
         playerTwo["spd"] = flash["spd"];
         playerTwo["int"] = flash["int"];
+        playerTwo["img"] = flash["img"];
         break;
     case 3:
         playerTwo["nombre"] = superman["nombre"];
@@ -119,38 +129,76 @@ switch (playerTwo["id"]) {
         playerTwo["def"] = superman["def"];
         playerTwo["spd"] = superman["spd"];
         playerTwo["int"] = superman["int"];
+        playerTwo["img"] = superman["img"];
         break;
     case 4:
-        playerTwo["nombre"] = flash["nombre"];
-        playerTwo["atq"] = flash["atq"];
-        playerTwo["def"] = flash["def"];
-        playerTwo["spd"] = flash["spd"];
-        playerTwo["int"] = flash["int"];
+        playerTwo["nombre"] = capitanAmerica["nombre"];
+        playerTwo["atq"] = capitanAmerica["atq"];
+        playerTwo["def"] = capitanAmerica["def"];
+        playerTwo["spd"] = capitanAmerica["spd"];
+        playerTwo["int"] = capitanAmerica["int"];
+        playerTwo["img"] = capitanAmerica["img"];
         break;
     case 5:
-        playerTwo["nombre"] = flash["nombre"];
-        playerTwo["atq"] = flash["atq"];
-        playerTwo["def"] = flash["def"];
-        playerTwo["spd"] = flash["spd"];
-        playerTwo["int"] = flash["int"];
+        playerTwo["nombre"] = ironMan["nombre"];
+        playerTwo["atq"] = ironMan["atq"];
+        playerTwo["def"] = ironMan["def"];
+        playerTwo["spd"] = ironMan["spd"];
+        playerTwo["int"] = ironMan["int"];
+        playerTwo["img"] = ironMan["img"];
         break;
     case 6:
-        playerTwo["nombre"] = flash["nombre"];
-        playerTwo["atq"] = flash["atq"];
-        playerTwo["def"] = flash["def"];
-        playerTwo["spd"] = flash["spd"];
-        playerTwo["int"] = flash["int"];
+        playerTwo["nombre"] = scarletWitch["nombre"];
+        playerTwo["atq"] = scarletWitch["atq"];
+        playerTwo["def"] = scarletWitch["def"];
+        playerTwo["spd"] = scarletWitch["spd"];
+        playerTwo["int"] = scarletWitch["int"];
+        playerTwo["img"] = scarletWitch["img"];
         break;
     case 7:
-        playerTwo["nombre"] = flash["nombre"];
-        playerTwo["atq"] = flash["atq"];
-        playerTwo["def"] = flash["def"];
-        playerTwo["spd"] = flash["spd"];
-        playerTwo["int"] = flash["int"];
+        playerTwo["nombre"] = saitama["nombre"];
+        playerTwo["atq"] = saitama["atq"];
+        playerTwo["def"] = saitama["def"];
+        playerTwo["spd"] = saitama["spd"];
+        playerTwo["int"] = saitama["int"];
+        playerTwo["img"] = saitama["img"];
         break;
     default:
         break;
 }
+console.log(playerTwo["nombre"]);
+console.log(playerTwo["atq"]);
+console.log(playerTwo["def"]);
+console.log(playerTwo["spd"]);
+console.log(playerTwo["int"]);
+console.log(playerTwo["id"]);
+
+/* let jugadorDos = document.getElementById("statsJugadorDos");
+
+document.body.appendChild(parrafo);
+ */
+const jugadorDos = document.getElementById("jugadorDos");
+
+
+jugadorDos.innerHTML = `<h2>${playerTwo[img]}</h2>`;
+
+console.log(`<h2>${playerTwo[img]}</h2>`);
+
+const avatarJugadorDos = document.createElement("avatarJugadorDos");
+avatarJugadorDos.src = `media/img/characters/no-avatar`;
+avatarJugadorDos.alt = "Jugador Dos";
+
+
+document.body.appendChild(img);
+
+let img = document.createElement('img');
+img.src = 'my_image.jpg';
+document.getElementById('body ').appendChild(img);
+
+console.log(jugador.textContent);
+console.log(jugador.innerHTML);
+console.log(jugador.outerHTML);
+
 
 
 console.log(playerTwo["nombre"]);
@@ -170,9 +218,15 @@ const diferencia = (a, b) => a - b;
 
 //Ingresar valores de Atq vs Defensa o Velocidad vs Inteligencia devuelve true en caso de victoria de player 1, false en caso de victoria player 2 o null en caso de empate
 
+const round = document.getElementById("rounds")
+
+round.innerHTML = "<p>HOLA JUAN CARLOS</p>";
+
+document.body.appendChild(round);
+
+
 function round(a, b, c, d) {
     document.write("Comienzo del round!" + `<br>`);
-
     hit1 = diferencia(a, d);
     document.write("Atacas!" + `<br>`);
     if (hit1 > 0) {
