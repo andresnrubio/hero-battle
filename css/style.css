@@ -26,6 +26,20 @@
 }
 
 #batalla {
+    width: 1750px;
+}
+
+#playerLeftTitle {
+    font-size: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#playerRightTitle {
+    font-size: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#batalla {
     width: 350px;
 }
 

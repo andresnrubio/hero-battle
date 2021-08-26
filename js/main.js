@@ -16,13 +16,13 @@ function peleador(nombre, atq, def, spd, int, id, img) {
     this.saludoPeleador = function() { console.log("Hola soy " + this.nombre + " y ganaré esta pelea") }
 }
 
-/*
+
 function solicitarNombre(player) {
-    nombre = prompt("Ingrese el nombre " + player);
+    nombre = prompt("Ingrese el nombre de" + player);
     return nombre;
 }
 
- nombre = solicitarNombre("su luchador");
+nombre = solicitarNombre(" su luchador");
 
 //CARGA VALORES ATQ / DEF / SPD / INT
 let atq = prompt("Ingresa tu nivel de ataque");
@@ -40,10 +40,7 @@ console.log(`int = ${int}`)
 id = 0;
 
 
-const playerOne = new peleador(nombre, atq, def, spd, int, id);
-
- */
-const playerOne = new peleador("CARLOS", 150, 80, 20, 90, 1, "no-avatar.jfif");
+const playerOne = new peleador(nombre, atq, def, spd, int, id, "no-avatar.jfif");
 
 console.log(playerOne["nombre"]);
 console.log(playerOne["atq"]);
@@ -281,10 +278,9 @@ function batalla(round1, round2) {
 let winner = batalla(roundA, roundB);
 
 console.log(`resultado de batalla ${winner}<br>`);
-/* 
-document.write("La batalla a finalizado..." + `<br>`);
- */
+
 //------RESULTADO------//
+
 
 let ganador = "";
 
