@@ -174,12 +174,12 @@ console.log(playerTwo["id"]);
 playerTwo.saludoPeleador();
 
 let playerRight = document.createElement("img");
-playerRight.src = `../media/characters/${playerTwo["img"]}`;
+playerRight.src = `media/characters/${playerTwo["img"]}`;
 playerRight.alt = "Jugador Derecho";
 document.getElementById("jugadorDos").appendChild(playerRight);
 
 let playerLeft = document.createElement("img");
-playerLeft.src = `../media/characters/${playerOne["img"]}`;
+playerLeft.src = `media/characters/${playerOne["img"]}`;
 playerLeft.alt = "Jugador Derecho";
 document.getElementById("jugadorUno").appendChild(playerLeft);
 
