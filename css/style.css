@@ -4,25 +4,30 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+    color: rgb(255, 255, 255);
 }
 
 .body {
     display: flex;
     align-content: center;
-    color: black;
+    justify-content: space-around;
+    color: rgb(255, 255, 255);
 }
 
 .cuadro {
+    background: #303030;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: space-around;
+    width: 80vw;
+    justify-content: space-evenly;
     align-items: center;
     font-size: 1.5rem;
     text-align: center;
     padding: 2rem;
     line-height: 2.5rem;
-    padding: 10 50px 10 50px;
+    padding: 10 10px 10 10px;
+    border-radius: 25px;
 }
 
 #batalla {
@@ -86,9 +91,9 @@
     justify-content: space-between;
     width: 20rem;
     height: 30rem;
-    background-color: rgb(126, 126, 126);
+    background: linear-gradient(135deg, #43629f 0%, #2d9ec2 100%);
     padding: 1rem;
-    border-radius: 2%;
+    border-radius: 15px;
 }
 
 #jugadorDos {
@@ -97,9 +102,9 @@
     justify-content: space-between;
     width: 20rem;
     height: 30rem;
-    background-color: rgb(126, 126, 126);
+    background: linear-gradient(135deg, #43629f 0%, #2d9ec2 100%);
     padding: 1rem;
-    border-radius: 2%;
+    border-radius: 15px;
 }
 
 #jugadorDos.img {
@@ -110,17 +115,25 @@
     display: flex;
     overflow: auto;
     justify-content: center;
+    border-radius: 15px;
+    border: 5px #000 solid;
+    box-shadow: 3px 3px 5px #303030;
 }
 
 #avatarJugadorDos {
     display: flex;
     overflow: auto;
     justify-content: center;
+    border-radius: 15px;
+    border: 5px #000 solid;
+    box-shadow: 3px 3px 5px #303030;
 }
 
 .ataques {
+    margin: 0.2rem 0 0 0;
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+    border: 5px #000 solid;
 }
