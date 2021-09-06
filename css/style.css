@@ -6,6 +6,12 @@
     font-size: 16px;
     color: rgb(255, 255, 255);
 }
+#bienvenida{
+display: flex;
+position: absolute;
+
+
+}
 
 .body {
     display: flex;
@@ -37,12 +43,12 @@
 }
 
 #playerLeftTitle {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #playerRightTitle {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -118,14 +124,13 @@
 #avatarJugadorUno {
     /* display: flex;
     overflow: auto;
-    justify-content: center;
-    max-height: 278px;
+    justify-content: center; */
+    /* max-height: 278px; */
     background-color: lightgray;
     border-radius: 15px;
-    border: 5px #000 solid;
+    /* border: 5px #000 solid; */
     box-shadow: 3px 3px 5px #303030;
-     */
-        width: 200px;
+        
         height: 200px;
         overflow: hidden;
         margin: 10px;
@@ -136,12 +141,12 @@
 #avatarJugadorDos {
     /* display: flex;
     overflow: hidden;
-    justify-content: center;
+    justify-content: center;*/
     background-color: lightgray;
     border-radius: 15px;
-    border: 5px #000 solid;
-    box-shadow: 3px 3px 5px #303030; */
-    width: 200px;
+    /* border: 5px #000 solid; */
+    box-shadow: 3px 3px 5px #303030; 
+    /*width: 200px;*/
     height: 200px;
     overflow: hidden;
     margin: 10px;
@@ -150,6 +155,7 @@
 
 #crop {
     position:absolute;
+    width: 60%;
     left: -100%;
     right: -100%;
     top: -100%;
@@ -183,7 +189,7 @@
   .avatar { grid-area: avatar; }
   .lifeBar { grid-area: lifeBar; }
   .Name { grid-area: Name; }
-  .atq { grid-area: atq; }
-  .spd { grid-area: spd; }
-  .def { grid-area: def; }
-  .int { grid-area: int; }
+  .atq { grid-area: atq; margin: auto;}
+  .spd { grid-area: spd; margin: auto;}
+  .def { grid-area: def; margin: auto;}
+  .int { grid-area: int; margin: auto;}
