@@ -1,7 +1,5 @@
 //------BIENVENIDA------//
-function saludo() {
-    alert("Bienvenido, esto es un simulador de batallas a dos round");
-}
+
 
 //------INGRESO DE PLAYER------//
 
@@ -232,101 +230,101 @@ const diferencia = (a, b) => a - b;
 //Ingresar valores de Atq vs Defensa o Velocidad vs Inteligencia devuelve true en caso de victoria de player 1, false en caso de victoria player 2 o null en caso de empate
 
 
-// let comienzo = "";
+let comienzo = "";
 
-// function round(a, b, c, d) {
+function round(a, b, c, d) {
 
-//     comienzo += "<p>Comienzo del round! </p>";
-//     hit1 = diferencia(a, d);
-//     comienzo += "<p>Atacas!</p>";
-//     console.log(hit1);
-//     if (hit1 > 0) {
-//         comienzo += `<p>Hiciste ${hit1} de daño</p>`;
-//     } else if (hit1 < 0) {
-//         comienzo += `<p>Tu golpe te daño a ti!</p>`;
-//     } else {
-//         comienzo += `<p>Tu golpe no tuvo efecto!</p>`;
-//     }
-
-
-//     hit2 = diferencia(c, b);
-//     comienzo += `<p>"Defiendes!"</p>`;
-//     if (hit2 > 0) {
-//         comienzo += `<p>Recibiste ${hit2} de daño</p>`;
-//     } else if (hit2 < 0) {
-//         comienzo += `<p>Devolviste el ataque!</p>`;
-//     } else {
-//         comienzo += `<p>El golpe no tuvo efecto!</p>`;
-//     }
+    comienzo += "<p>Comienzo del round! </p>";
+    hit1 = diferencia(a, d);
+    comienzo += "<p>Atacas!</p>";
+    console.log(hit1);
+    if (hit1 > 0) {
+        comienzo += `<p>Hiciste ${hit1} de daño</p>`;
+    } else if (hit1 < 0) {
+        comienzo += `<p>Tu golpe te daño a ti!</p>`;
+    } else {
+        comienzo += `<p>Tu golpe no tuvo efecto!</p>`;
+    }
 
 
-
-//     if (hit1 > hit2) {
-//         return true;
-//     } else if (hit2 > hit1) {
-//         return false;
-//     } else {
-//         return null;
-//     }
-
-// }
-
-
-// comienzo += "<p>Round 1</p>";
-
-// roundA = round(playerOne["atq"], playerOne["def"], playerTwo["atq"], playerTwo["def"]);
-// console.log(`resultado de roundA ${roundA}<br>`);
-
-// roundB = round(playerOne["spd"], playerOne["int"], playerTwo["spd"], playerTwo["int"]);
-// console.log(`resultado de roundB ${roundB}<br>`);
-
-// const roundCenter = document.getElementById("rounds")
-// roundCenter.innerHTML = comienzo;
-
-// //Compara resultados de los round para definir ganador o empate
-
-// function batalla(round1, round2) {
-//     if (
-//         (round1 === true && round2 === true) ||
-//         (round1 === true && round2 === null) ||
-//         (round1 === null && round2 === true)
-//     ) {
-//         return true;
-//     } else if (
-//         (round1 === false && round2 === false) ||
-//         (round1 === true && round2 === null) ||
-//         (round1 === null && round2 === false)
-//     ) {
-//         return false;
-//     } else if (
-//         (round1 === true && round2 === false) ||
-//         (round1 === false && round2 === true) ||
-//         (round1 === null && round2 === null)
-//     ) {
-//         return null;
-//     }
-// }
-
-// let winner = batalla(roundA, roundB);
-
-// console.log(`resultado de batalla ${winner}<br>`);
-
-// //------RESULTADO------//
+    hit2 = diferencia(c, b);
+    comienzo += `<p>"Defiendes!"</p>`;
+    if (hit2 > 0) {
+        comienzo += `<p>Recibiste ${hit2} de daño</p>`;
+    } else if (hit2 < 0) {
+        comienzo += `<p>Devolviste el ataque!</p>`;
+    } else {
+        comienzo += `<p>El golpe no tuvo efecto!</p>`;
+    }
 
 
-// let ganador = "";
 
-// if (winner === true) {
+    if (hit1 > hit2) {
+        return true;
+    } else if (hit2 > hit1) {
+        return false;
+    } else {
+        return null;
+    }
 
-//     ganador = `<p id="finalBaner">${playerOne["nombre"]} ha Ganado!</p>`;
-// } else if (winner === false) {
-//     ganador = `<p id="finalBaner">${playerTwo["nombre"]} a ganado esta batalla</p>`;
-// } else {
-//     ganador = `<p id="finalBaner">${playerOne["nombre"]} y  ${playerTwo["nombre"]} han empatado!</p>`;
-// }
+}
 
-// const final = document.getElementById("final")
-// final.innerHTML = ganador;
+
+comienzo += "<p>Round 1</p>";
+
+roundA = round(playerOne["atq"], playerOne["def"], playerTwo["atq"], playerTwo["def"]);
+console.log(`resultado de roundA ${roundA}<br>`);
+
+roundB = round(playerOne["spd"], playerOne["int"], playerTwo["spd"], playerTwo["int"]);
+console.log(`resultado de roundB ${roundB}<br>`);
+
+const roundCenter = document.getElementById("rounds")
+roundCenter.innerHTML = comienzo;
+
+//Compara resultados de los round para definir ganador o empate
+
+function batalla(round1, round2) {
+    if (
+        (round1 === true && round2 === true) ||
+        (round1 === true && round2 === null) ||
+        (round1 === null && round2 === true)
+    ) {
+        return true;
+    } else if (
+        (round1 === false && round2 === false) ||
+        (round1 === true && round2 === null) ||
+        (round1 === null && round2 === false)
+    ) {
+        return false;
+    } else if (
+        (round1 === true && round2 === false) ||
+        (round1 === false && round2 === true) ||
+        (round1 === null && round2 === null)
+    ) {
+        return null;
+    }
+}
+
+let winner = batalla(roundA, roundB);
+
+console.log(`resultado de batalla ${winner}<br>`);
+
+//------RESULTADO------//
+
+
+let ganador = "";
+
+if (winner === true) {
+
+    ganador = `<p id="finalBaner">${playerOne["nombre"]} ha Ganado!</p>`;
+} else if (winner === false) {
+    ganador = `<p id="finalBaner">${playerTwo["nombre"]} a ganado esta batalla</p>`;
+} else {
+    ganador = `<p id="finalBaner">${playerOne["nombre"]} y  ${playerTwo["nombre"]} han empatado!</p>`;
+}
+
+const final = document.getElementById("final")
+final.innerHTML = ganador;
 
 
 //------SALIDA/SALUDO------//
