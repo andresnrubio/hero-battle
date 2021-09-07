@@ -10,15 +10,30 @@
 </head>
 
 <body>
-<section id="bienvenida">
+<!-- <section id="bienvenida">
 <div id="startGame"><button id="start">INICIAR JUEGO</button>
-</div>
+</div> -->
 
 
-</section>
-    <section class="cuadro">
-
-        <div class="heroCard" id="jugadorUno">
+<div class="battleGround cuadro">
+    <div class="vs">
+        <div id="encuentro">
+            <img src="media/img/vs-image.png" alt="VS" id="vsImg">
+        </div>
+    </div>
+    <div class="playerTwo heroCard" id="jugadorDos">
+        
+            <div class="avatar" id="avatarJugadorDos"></div>
+            <div class="lifeBar" id="lifeBar"></div>
+            <div class="Name" id="playerRightTitle"></div>
+            <div class="atq"><button id="btnAtqlayerTwo">CLICK</button></div>
+            <div class="spd"><button id="btnSpdPlayerTwo">CLICK</button>  </div>
+            <div class="def"></div>
+            <div class="int"></div>
+       
+    </div>
+    <div class="playerOne heroCard" id="jugadorUno">
+  
             <div class="avatar" id="avatarJugadorUno"></div>
             <div class="lifeBar" id="lifeBar"></div>
             <div class="Name" id="playerLeftTitle"></div>
@@ -26,8 +41,34 @@
             <div class="spd"><button id="btnSpdPlayerOne">CLICK</button>   </div>
             <div class="def"></div>
             <div class="int"></div>
-          </div>
-<!-- 
+        
+    </div>
+    <div class="combatText">
+        <div id="batalla">
+            
+
+            <div id="rounds"></div>
+
+
+        </div>
+        
+    </div>
+
+    <div id="final"></div> 
+
+  </div>
+
+
+ 
+  
+
+
+
+  <!-- </section>
+    <section class="cuadro">
+
+        
+
         <div id="jugadorUno">
             <div id="playerLeftTitle"> </div>
             <div id="lifeBar"></div>
@@ -36,14 +77,12 @@
             <div class="ataques">
                 <button id="btnAtqPlayerOne">CLICK</button> 
                 <button id="btnSpdPlayerOne">CLICK</button>     
-            </div> -->
+            </div> 
 
 
         </div>
         <div id="batalla">
-            <div id="encuentro">
-                <img src="media/img/vs-image.png" alt="VS" id="vs">
-            </div>
+            
 
             <div id="rounds"></div>
 
@@ -51,17 +90,9 @@
         </div>
         <div id="final"></div>
 
-        <div class="heroCard" id="jugadorDos">
-            <div class="avatar" id="avatarJugadorDos"></div>
-            <div class="lifeBar" id="lifeBar"></div>
-            <div class="Name" id="playerRightTitle"></div>
-            <div class="atq"><button id="btnAtqlayerTwo">CLICK</button></div>
-            <div class="spd"><button id="btnSpdPlayerTwo">CLICK</button>  </div>
-            <div class="def"></div>
-            <div class="int"></div>
-          </div>
+       
 
-        <!-- <div id="jugadorDos">
+       <div id="jugadorDos">
             <div id="playerRightTitle"></div>
             <div id="lifeBar"></div>
             <div id="avatarJugadorDos">
@@ -71,11 +102,11 @@
                 <button id="btnAtqlayerTwo">CLICK</button>
                  <button id="btnSpdPlayerTwo">CLICK</button> 
             </div>
-        </div> -->
+        </div> 
 
-        <script src="js/main.js"></script>
-    </section>
-
+        
+    </section> -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>
