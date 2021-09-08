@@ -6,14 +6,64 @@
     font-size: 16px;
     color: rgb(255, 255, 255);
 }
-#bienvenida{
-display: flex;
-position: absolute;
 
+@font-face {
+    font-family:"EvilEmpire";
+    src: url("../css/fonts/EvilEmpire-4BBVK.ttf") format("truetype");
+  }
+
+  .body {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+}
+
+#bienvenida{
+    position: absolute;
+    z-index: 1;
+    background-color: #303030;
+    height: 850px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+
+h1{
+    align-self: center;
+    font-size: 10rem;
+    letter-spacing: 0.5rem;
+font-family: EvilEmpire;
 
 }
+
+.boton{
+    align-self: center;
+    color: #303030;
+    height: 3rem;
+    background-color: #fff;
+    width: 15rem;
+    text-align: center;
+}
+
+
+.boton:hover{
+    background-color: red;
+    color: #303030;
+}
+.boton:active{
+    background-color: #303030;
+    color: #fff;
+}
+
+
+
 .battleGround {
     display: grid;
+    height: 850px;
     grid-template-columns: 0.3fr 0.9fr 1fr 0.3fr 0.5fr 0.5fr 0.5fr .3fr 1fr 1fr .3fr;
     grid-template-rows: .1fr 0.1fr 1fr 0.5fr 0.5fr .5fr 1fr 0.1fr .1fr;
     grid-auto-rows: 1fr;
@@ -31,8 +81,12 @@ position: absolute;
       ". . . . . . . . . . .";
   }
   
-  .vs { grid-area: vs; }
-  
+  .vs { grid-area: vs;}
+
+  .vs img{
+    height: 200px;
+  }
+
   .playerTwo { grid-area: playerTwo;  justify-self: center;}
   
   .playerOne { grid-area: playerOne;  justify-self: center;}
@@ -41,36 +95,21 @@ position: absolute;
     grid-area: combatText;
     background: deepskyblue;
     max-height: 200px;
-    overflow: auto; }
-  
-.body {
-    display: flex;
-    align-content: center;
-    justify-content: space-around;
-    color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: center;
+    width: 500px;
+    overflow: auto; 
 }
+  
+
 
 .cuadro {
     background: #303030;
-    /* display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row; 
-    width: 80vw;*/
     justify-content: space-evenly;
     align-items: center;
     font-size: 1.5rem;
     text-align: center;
- padding: 2rem;
     line-height: 2.5rem;
-    /* padding: 10 10px 10 10px;
-    border-radius: 25px; */
 }
 
-#batalla {
-    width: 1750px;
-}
 
 #playerLeftTitle {
     font-size: 1.5rem;
@@ -82,16 +121,7 @@ position: absolute;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-#batalla {
-    width: 350px;
-}
 
-#encuentro {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
 
 #rounds {
     display: flex;
@@ -99,9 +129,6 @@ position: absolute;
     margin: 0 auto;
     justify-content: center;
     padding: 5px;
-    /* background-color: burlywood; */
-    /*     width: 500px;
-    height: 1200px; */
 }
 
 #finalBaner {
@@ -118,14 +145,7 @@ position: absolute;
     background-color: cornflowerblue;
 }
 
-#vsImg {
-    display: flex;
-    width: 100px;
-}
-
 #jugadorUno {
-    /* display: flex;
-    flex-direction: column; */
     justify-content: space-between;
     width: 20rem;
     height: 30rem;
@@ -135,9 +155,6 @@ position: absolute;
 }
 
 #jugadorDos {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
     width: 20rem;
     height: 30rem;
     background: linear-gradient(135deg, #43629f 0%, #2d9ec2 100%);
@@ -152,13 +169,8 @@ position: absolute;
 }
 
 #avatarJugadorUno {
-    /* display: flex;
-    overflow: auto;
-    justify-content: center; */
-    /* max-height: 278px; */
     background-color: lightgray;
     border-radius: 15px;
-    /* border: 5px #000 solid; */
     box-shadow: 3px 3px 5px #303030;
         
         height: 200px;
@@ -169,14 +181,9 @@ position: absolute;
 }
 
 #avatarJugadorDos {
-    /* display: flex;
-    overflow: hidden;
-    justify-content: center;*/
     background-color: lightgray;
     border-radius: 15px;
-    /* border: 5px #000 solid; */
     box-shadow: 3px 3px 5px #303030; 
-    /*width: 200px;*/
     height: 200px;
     overflow: hidden;
     margin: 10px;

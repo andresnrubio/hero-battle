@@ -10,103 +10,53 @@
 </head>
 
 <body>
-<!-- <section id="bienvenida">
-<div id="startGame"><button id="start">INICIAR JUEGO</button>
-</div> -->
+<section id="bienvenida" >
 
+ <h1>Hero Battle</h1>
 
-<div class="battleGround cuadro">
-    <div class="vs">
-        <div id="encuentro">
-            <img src="media/img/vs-image.png" alt="VS" id="vsImg">
-        </div>
-    </div>
-    <div class="playerTwo heroCard" id="jugadorDos">
-        
-            <div class="avatar" id="avatarJugadorDos"></div>
-            <div class="lifeBar" id="lifeBar"></div>
-            <div class="Name" id="playerRightTitle"></div>
-            <div class="atq"><button id="btnAtqlayerTwo">CLICK</button></div>
-            <div class="spd"><button id="btnSpdPlayerTwo">CLICK</button>  </div>
-            <div class="def"></div>
-            <div class="int"></div>
-       
-    </div>
-    <div class="playerOne heroCard" id="jugadorUno">
-  
-            <div class="avatar" id="avatarJugadorUno"></div>
-            <div class="lifeBar" id="lifeBar"></div>
-            <div class="Name" id="playerLeftTitle"></div>
-            <div class="atq"><button id="btnAtqPlayerOne">CLICK</button> </div>
-            <div class="spd"><button id="btnSpdPlayerOne">CLICK</button>   </div>
-            <div class="def"></div>
-            <div class="int"></div>
-        
-    </div>
-    <div class="combatText">
-        <div id="batalla">
-            
+<button class="boton" id="startGame">Inicio</button>
+    
+</section> 
 
-            <div id="rounds"></div>
+        <section class="cuadro battleGround">
 
-
-        </div>
-        
-    </div>
-
-    <div id="final"></div> 
-
-  </div>
-
-
- 
-  
-
-
-
-  <!-- </section>
-    <section class="cuadro">
-
-        
-
-        <div id="jugadorUno">
-            <div id="playerLeftTitle"> </div>
-            <div id="lifeBar"></div>
-            <div id="avatarJugadorUno">
+            <div class="heroCard playerOne" id="jugadorUno">
+                <div class="avatar" id="avatarJugadorUno"></div>
+                <div class="lifeBar" id="lifeBar"></div>
+                <div class="Name" id="playerLeftTitle"></div>
+                <div class="atq"><button id="btnAtqPlayerOne">CLICK</button> </div>
+                <div class="spd"><button id="btnSpdPlayerOne">CLICK</button>   </div>
+                <div class="def"></div>
+                <div class="int"></div>
+              </div>
+    
             </div>
-            <div class="ataques">
-                <button id="btnAtqPlayerOne">CLICK</button> 
-                <button id="btnSpdPlayerOne">CLICK</button>     
-            </div> 
-
-
-        </div>
-        <div id="batalla">
+         
+                <div class="vs">
+                    <img src="media/img/vs-image.png" alt="VS" id="vs">
+                </div>
+       
             
-
-            <div id="rounds"></div>
-
-
-        </div>
+    
+            <div class="heroCard playerTwo" id="jugadorDos">
+                <div class="avatar" id="avatarJugadorDos"></div>
+                <div class="lifeBar" id="lifeBar"></div>
+                <div class="Name" id="playerRightTitle"></div>
+                <div class="atq"><button id="btnAtqlayerTwo">CLICK</button></div>
+                <div class="spd"><button id="btnSpdPlayerTwo">CLICK</button>  </div>
+                <div class="def"></div>
+                <div class="int"></div>
+              </div>
+    
+          
+            <div class="combatText" id="rounds"></div>
         <div id="final"></div>
-
-       
-
-       <div id="jugadorDos">
-            <div id="playerRightTitle"></div>
-            <div id="lifeBar"></div>
-            <div id="avatarJugadorDos">
-
-            </div>
-            <div class="ataques">
-                <button id="btnAtqlayerTwo">CLICK</button>
-                 <button id="btnSpdPlayerTwo">CLICK</button> 
-            </div>
-        </div> 
-
-        
-    </section> -->
+    </section> 
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-migrate-1.4.1.min.js"></script>
     <script src="js/main.js"></script>
+    
+   
 </body>
 
 </html>

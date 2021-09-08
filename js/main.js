@@ -1,6 +1,3 @@
-//------BIENVENIDA------//
-
-
 //------INGRESO DE PLAYER------//
 
 function peleador(nombre, atq, def, spd, int, id, img, life, universe) {
@@ -41,312 +38,304 @@ heroes.push(saitama);
 
 console.log(heroes);
 
+//------BIENVENIDA------//
 
 
-// //-------SELECCION DE PERSONAJE-----------//
+let start = document.getElementById("startGame")
+start.addEventListener("click", respuestaStart)
 
-function selection ()
-{
+function respuestaStart() {
+    document.getElementById("bienvenida").style.display = "none";
+}
+
+// -------SELECCION DE PERSONAJE-----------/
+
+function solicitarNombre(player) {
+    nombre = prompt("Ingrese el nombre de" + player);
+    return nombre;
+}
+
+nombre = solicitarNombre(" su luchador");
+
+//CARGA VALORES ATQ / DEF / SPD / INT
+let atq = prompt("Ingresa tu nivel de ataque");
+atq = parseInt(atq);
+console.log(`atq = ${atq}`)
+let def = prompt("Ingresa tu nivel de defensa");
+def = parseInt(def);
+console.log(`def = ${def}`)
+let spd = prompt("Ingresa tu nivel de velocidad");
+spd = parseInt(spd);
+console.log(`spd = ${spd}`)
+let int = prompt("Ingresa tu nivel de inteligencia");
+int = parseInt(int);
+console.log(`int = ${int}`)
+id = 0;
+
+
+const playerOne = new peleador(nombre, atq, def, spd, int, id, "no-avatar.jfif");
+
+console.log(playerOne["nombre"]);
+console.log(playerOne["atq"]);
+console.log(playerOne["def"]);
+console.log(playerOne["spd"]);
+console.log(playerOne["int"]);
+console.log(playerOne["id"]);
+playerOne.saludoPeleador();
+
+
+// se ordena array que contiene heroes por su poder de ataque
+
+const ordenados = heroes.sort((a, b) =>
+    a.atq < b.atq ? 1 : b.atq < a.atq ? -1 : 0
+);
+console.log(ordenados);
+
+function randomId(min, max) {
+    id = Math.random() * (max - min) + min;
+
+    id = Math.round(id)
+    console.log("id " + id)
+    return (id);
+}
+
+const playerTwo = new peleador("playerTwo", 0, 0, 0, 0, 0);
+
+playerTwo["id"] = randomId(1, 7);
+
+console.log(playerTwo["nombre"]);
+console.log(playerTwo["atq"]);
+console.log(playerTwo["def"]);
+console.log(playerTwo["spd"]);
+console.log(playerTwo["int"]);
+console.log(playerTwo["id"]);
+
+
+switch (playerTwo["id"]) {
+    case 1:
+        playerTwo["nombre"] = batman["nombre"];
+        playerTwo["atq"] = batman["atq"];
+        playerTwo["def"] = batman["def"];
+        playerTwo["spd"] = batman["spd"];
+        playerTwo["int"] = batman["int"];
+        playerTwo["img"] = batman["img"];
+        break;
+    case 2:
+        playerTwo["nombre"] = flash["nombre"];
+        playerTwo["atq"] = flash["atq"];
+        playerTwo["def"] = flash["def"];
+        playerTwo["spd"] = flash["spd"];
+        playerTwo["int"] = flash["int"];
+        playerTwo["img"] = flash["img"];
+        break;
+    case 3:
+        playerTwo["nombre"] = superman["nombre"];
+        playerTwo["atq"] = superman["atq"];
+        playerTwo["def"] = superman["def"];
+        playerTwo["spd"] = superman["spd"];
+        playerTwo["int"] = superman["int"];
+        playerTwo["img"] = superman["img"];
+        break;
+    case 4:
+        playerTwo["nombre"] = capitanAmerica["nombre"];
+        playerTwo["atq"] = capitanAmerica["atq"];
+        playerTwo["def"] = capitanAmerica["def"];
+        playerTwo["spd"] = capitanAmerica["spd"];
+        playerTwo["int"] = capitanAmerica["int"];
+        playerTwo["img"] = capitanAmerica["img"];
+        break;
+    case 5:
+        playerTwo["nombre"] = ironMan["nombre"];
+        playerTwo["atq"] = ironMan["atq"];
+        playerTwo["def"] = ironMan["def"];
+        playerTwo["spd"] = ironMan["spd"];
+        playerTwo["int"] = ironMan["int"];
+        playerTwo["img"] = ironMan["img"];
+        break;
+    case 6:
+        playerTwo["nombre"] = scarletWitch["nombre"];
+        playerTwo["atq"] = scarletWitch["atq"];
+        playerTwo["def"] = scarletWitch["def"];
+        playerTwo["spd"] = scarletWitch["spd"];
+        playerTwo["int"] = scarletWitch["int"];
+        playerTwo["img"] = scarletWitch["img"];
+        break;
+    case 7:
+        playerTwo["nombre"] = saitama["nombre"];
+        playerTwo["atq"] = saitama["atq"];
+        playerTwo["def"] = saitama["def"];
+        playerTwo["spd"] = saitama["spd"];
+        playerTwo["int"] = saitama["int"];
+        playerTwo["img"] = saitama["img"];
+        break;
+    default:
+        break;
+}
+console.log(playerTwo["nombre"]);
+console.log(playerTwo["atq"]);
+console.log(playerTwo["def"]);
+console.log(playerTwo["spd"]);
+console.log(playerTwo["int"]);
+console.log(playerTwo["id"]);
+
+
+playerTwo.saludoPeleador();
+
+let playerRight = document.createElement("img");
+
+playerRight.src = `media/characters/${playerTwo["img"]}`;
+playerRight.alt = "Jugador Derecho";
+playerRight.id="crop";
+document.getElementById("avatarJugadorDos").appendChild(playerRight);
+
+let playerLeft = document.createElement("img");
+
+playerLeft.src = `media/characters/${playerOne["img"]}`;
+playerLeft.alt = "Jugador Derecho";
+playerLeft.id="crop";
+document.getElementById("avatarJugadorUno").appendChild(playerLeft);
 
 
 
+//------COMBATE------//
+
+let botonAtqOne = document.getElementById("btnAtqPlayerOne")
+botonAtqOne.addEventListener("click", respuestaAtqOne)
+
+function respuestaAtqOne() {
+    console.log("Respuesta evento Ataque 1");
+}
+let botonSpdOne = document.getElementById("btnSpdPlayerOne")
+botonSpdOne.addEventListener("click", respuestaSpdOne)
+
+function respuestaSpdOne() {
+    console.log("Respuesta evento Speed 1");
+}
+
+let botonAtqTwo = document.getElementById("btnAtqlayerTwo")
+botonAtqTwo.addEventListener("click", respuestaAtqTwo)
+
+function respuestaAtqTwo() {
+    console.log("Respuesta evento Ataque 2");
+}
+let botonSpdTwo = document.getElementById("btnSpdPlayerTwo")
+botonSpdTwo.addEventListener("click", respuestaSpdTwo)
+function respuestaSpdTwo() {
+    console.log("Respuesta evento Speed 2");
+}
 
 
-    
+
+const playerLeftTitle = document.getElementById("playerLeftTitle");
+playerLeftTitle.innerHTML = `${playerOne["nombre"]}`;
+
+const playerRightTitle = document.getElementById("playerRightTitle");
+playerRightTitle.innerHTML = `${playerTwo["nombre"]}`;
+
+
+const diferencia = (a, b) => a - b;
+
+//Ingresar valores de Atq vs Defensa o Velocidad vs Inteligencia devuelve true en caso de victoria de player 1, false en caso de victoria player 2 o null en caso de empate
+
+
+let comienzo = "";
+
+function round(a, b, c, d) {
+
+    comienzo += "<p>Comienzo del round! </p>";
+    hit1 = diferencia(a, d);
+    comienzo += "<p>Atacas!</p>";
+    console.log(hit1);
+    if (hit1 > 0) {
+        comienzo += `<p>Hiciste ${hit1} de daño</p>`;
+    } else if (hit1 < 0) {
+        comienzo += `<p>Tu golpe te daño a ti!</p>`;
+    } else {
+        comienzo += `<p>Tu golpe no tuvo efecto!</p>`;
+    }
+
+
+    hit2 = diferencia(c, b);
+    comienzo += `<p>"Defiendes!"</p>`;
+    if (hit2 > 0) {
+        comienzo += `<p>Recibiste ${hit2} de daño</p>`;
+    } else if (hit2 < 0) {
+        comienzo += `<p>Devolviste el ataque!</p>`;
+    } else {
+        comienzo += `<p>El golpe no tuvo efecto!</p>`;
+    }
+
+
+
+    if (hit1 > hit2) {
+        return true;
+    } else if (hit2 > hit1) {
+        return false;
+    } else {
+        return null;
+    }
 
 }
 
-// // function solicitarNombre(player) {
-// //     nombre = prompt("Ingrese el nombre de" + player);
-// //     return nombre;
-// // }
-
-// // nombre = solicitarNombre(" su luchador");
-
-// // //CARGA VALORES ATQ / DEF / SPD / INT
-// // let atq = prompt("Ingresa tu nivel de ataque");
-// // atq = parseInt(atq);
-// // console.log(`atq = ${atq}`)
-// // let def = prompt("Ingresa tu nivel de defensa");
-// // def = parseInt(def);
-// // console.log(`def = ${def}`)
-// // let spd = prompt("Ingresa tu nivel de velocidad");
-// // spd = parseInt(spd);
-// // console.log(`spd = ${spd}`)
-// // let int = prompt("Ingresa tu nivel de inteligencia");
-// // int = parseInt(int);
-// // console.log(`int = ${int}`)
-// // id = 0;
-
-
-// // const playerOne = new peleador(nombre, atq, def, spd, int, id, "no-avatar.jfif");
-
-// const playerOne = new peleador(nombre, atq, def, spd, int, id, "no-avatar.jfif");
-
-// console.log(playerOne["nombre"]);
-// console.log(playerOne["atq"]);
-// console.log(playerOne["def"]);
-// console.log(playerOne["spd"]);
-// console.log(playerOne["int"]);
-// console.log(playerOne["id"]);
-// playerOne.saludoPeleador();
-
-
-
-
-
-// // se ordena array que contiene heroes por su poder de ataque
-
-// const ordenados = heroes.sort((a, b) =>
-//     a.atq < b.atq ? 1 : b.atq < a.atq ? -1 : 0
-// );
-// console.log(ordenados);
-
-// function randomId(min, max) {
-//     id = Math.random() * (max - min) + min;
-
-//     id = Math.round(id)
-//     console.log("id " + id)
-//     return (id);
-// }
-
-// const playerTwo = new peleador("playerTwo", 0, 0, 0, 0, 0);
-
-// playerTwo["id"] = randomId(1, 7);
-
-// console.log(playerTwo["nombre"]);
-// console.log(playerTwo["atq"]);
-// console.log(playerTwo["def"]);
-// console.log(playerTwo["spd"]);
-// console.log(playerTwo["int"]);
-// console.log(playerTwo["id"]);
-
-
-// switch (playerTwo["id"]) {
-//     case 1:
-//         playerTwo["nombre"] = batman["nombre"];
-//         playerTwo["atq"] = batman["atq"];
-//         playerTwo["def"] = batman["def"];
-//         playerTwo["spd"] = batman["spd"];
-//         playerTwo["int"] = batman["int"];
-//         playerTwo["img"] = batman["img"];
-//         break;
-//     case 2:
-//         playerTwo["nombre"] = flash["nombre"];
-//         playerTwo["atq"] = flash["atq"];
-//         playerTwo["def"] = flash["def"];
-//         playerTwo["spd"] = flash["spd"];
-//         playerTwo["int"] = flash["int"];
-//         playerTwo["img"] = flash["img"];
-//         break;
-//     case 3:
-//         playerTwo["nombre"] = superman["nombre"];
-//         playerTwo["atq"] = superman["atq"];
-//         playerTwo["def"] = superman["def"];
-//         playerTwo["spd"] = superman["spd"];
-//         playerTwo["int"] = superman["int"];
-//         playerTwo["img"] = superman["img"];
-//         break;
-//     case 4:
-//         playerTwo["nombre"] = capitanAmerica["nombre"];
-//         playerTwo["atq"] = capitanAmerica["atq"];
-//         playerTwo["def"] = capitanAmerica["def"];
-//         playerTwo["spd"] = capitanAmerica["spd"];
-//         playerTwo["int"] = capitanAmerica["int"];
-//         playerTwo["img"] = capitanAmerica["img"];
-//         break;
-//     case 5:
-//         playerTwo["nombre"] = ironMan["nombre"];
-//         playerTwo["atq"] = ironMan["atq"];
-//         playerTwo["def"] = ironMan["def"];
-//         playerTwo["spd"] = ironMan["spd"];
-//         playerTwo["int"] = ironMan["int"];
-//         playerTwo["img"] = ironMan["img"];
-//         break;
-//     case 6:
-//         playerTwo["nombre"] = scarletWitch["nombre"];
-//         playerTwo["atq"] = scarletWitch["atq"];
-//         playerTwo["def"] = scarletWitch["def"];
-//         playerTwo["spd"] = scarletWitch["spd"];
-//         playerTwo["int"] = scarletWitch["int"];
-//         playerTwo["img"] = scarletWitch["img"];
-//         break;
-//     case 7:
-//         playerTwo["nombre"] = saitama["nombre"];
-//         playerTwo["atq"] = saitama["atq"];
-//         playerTwo["def"] = saitama["def"];
-//         playerTwo["spd"] = saitama["spd"];
-//         playerTwo["int"] = saitama["int"];
-//         playerTwo["img"] = saitama["img"];
-//         break;
-//     default:
-//         break;
-// }
-// console.log(playerTwo["nombre"]);
-// console.log(playerTwo["atq"]);
-// console.log(playerTwo["def"]);
-// console.log(playerTwo["spd"]);
-// console.log(playerTwo["int"]);
-// console.log(playerTwo["id"]);
-
-
-// playerTwo.saludoPeleador();
 
-// let playerRight = document.createElement("img");
-
-// playerRight.src = `media/characters/${playerTwo["img"]}`;
-// playerRight.alt = "Jugador Derecho";
-// playerRight.id="crop";
-// document.getElementById("avatarJugadorDos").appendChild(playerRight);
+comienzo += "<p>Round 1</p>";
 
-// let playerLeft = document.createElement("img");
+roundA = round(playerOne["atq"], playerOne["def"], playerTwo["atq"], playerTwo["def"]);
+console.log(`resultado de roundA ${roundA}<br>`);
 
-// playerLeft.src = `media/characters/${playerOne["img"]}`;
-// playerLeft.alt = "Jugador Derecho";
-// playerLeft.id="crop";
-// document.getElementById("avatarJugadorUno").appendChild(playerLeft);
+roundB = round(playerOne["spd"], playerOne["int"], playerTwo["spd"], playerTwo["int"]);
+console.log(`resultado de roundB ${roundB}<br>`);
 
+const roundCenter = document.getElementById("rounds")
+roundCenter.innerHTML = comienzo;
 
+//Compara resultados de los round para definir ganador o empate
 
-// //------COMBATE------//
-
-// let botonAtqOne = document.getElementById("btnAtqPlayerOne")
-// botonAtqOne.addEventListener("click", respuestaAtqOne)
-
-// function respuestaAtqOne() {
-//     console.log("Respuesta evento Ataque 1");
-// }
-// let botonSpdOne = document.getElementById("btnSpdPlayerOne")
-// botonSpdOne.addEventListener("click", respuestaSpdOne)
-
-// function respuestaSpdOne() {
-//     console.log("Respuesta evento Speed 1");
-// }
-
-// let botonAtqTwo = document.getElementById("btnAtqlayerTwo")
-// botonAtqTwo.addEventListener("click", respuestaAtqTwo)
-
-// function respuestaAtqTwo() {
-//     console.log("Respuesta evento Ataque 2");
-// }
-// let botonSpdTwo = document.getElementById("btnSpdPlayerTwo")
-// botonSpdTwo.addEventListener("click", respuestaSpdTwo)
-// function respuestaSpdTwo() {
-//     console.log("Respuesta evento Speed 2");
-// }
-
+function batalla(round1, round2) {
+    if (
+        (round1 === true && round2 === true) ||
+        (round1 === true && round2 === null) ||
+        (round1 === null && round2 === true)
+    ) {
+        return true;
+    } else if (
+        (round1 === false && round2 === false) ||
+        (round1 === true && round2 === null) ||
+        (round1 === null && round2 === false)
+    ) {
+        return false;
+    } else if (
+        (round1 === true && round2 === false) ||
+        (round1 === false && round2 === true) ||
+        (round1 === null && round2 === null)
+    ) {
+        return null;
+    }
+}
 
+let winner = batalla(roundA, roundB);
 
-// const playerLeftTitle = document.getElementById("playerLeftTitle");
-// playerLeftTitle.innerHTML = `${playerOne["nombre"]}`;
-
-// const playerRightTitle = document.getElementById("playerRightTitle");
-// playerRightTitle.innerHTML = `${playerTwo["nombre"]}`;
-
-
-// const diferencia = (a, b) => a - b;
-
-// //Ingresar valores de Atq vs Defensa o Velocidad vs Inteligencia devuelve true en caso de victoria de player 1, false en caso de victoria player 2 o null en caso de empate
+console.log(`resultado de batalla ${winner}<br>`);
 
+//------RESULTADO------//
 
-// let comienzo = "";
 
-// function round(a, b, c, d) {
+let ganador = "";
 
-//     comienzo += "<p>Comienzo del round! </p>";
-//     hit1 = diferencia(a, d);
-//     comienzo += "<p>Atacas!</p>";
-//     console.log(hit1);
-//     if (hit1 > 0) {
-//         comienzo += `<p>Hiciste ${hit1} de daño</p>`;
-//     } else if (hit1 < 0) {
-//         comienzo += `<p>Tu golpe te daño a ti!</p>`;
-//     } else {
-//         comienzo += `<p>Tu golpe no tuvo efecto!</p>`;
-//     }
+if (winner === true) {
 
+    ganador = `<p id="finalBaner">${playerOne["nombre"]} ha Ganado!</p>`;
+} else if (winner === false) {
+    ganador = `<p id="finalBaner">${playerTwo["nombre"]} a ganado esta batalla</p>`;
+} else {
+    ganador = `<p id="finalBaner">${playerOne["nombre"]} y  ${playerTwo["nombre"]} han empatado!</p>`;
+}
 
-//     hit2 = diferencia(c, b);
-//     comienzo += `<p>"Defiendes!"</p>`;
-//     if (hit2 > 0) {
-//         comienzo += `<p>Recibiste ${hit2} de daño</p>`;
-//     } else if (hit2 < 0) {
-//         comienzo += `<p>Devolviste el ataque!</p>`;
-//     } else {
-//         comienzo += `<p>El golpe no tuvo efecto!</p>`;
-//     }
+const final = document.getElementById("final")
+final.innerHTML = ganador;
 
 
+//------SALIDA/SALUDO------//
+/* alert("Gracias por participar!"); */
 
-//     if (hit1 > hit2) {
-//         return true;
-//     } else if (hit2 > hit1) {
-//         return false;
-//     } else {
-//         return null;
-//     }
-
-// }
-
-
-// comienzo += "<p>Round 1</p>";
-
-// roundA = round(playerOne["atq"], playerOne["def"], playerTwo["atq"], playerTwo["def"]);
-// console.log(`resultado de roundA ${roundA}<br>`);
-
-// roundB = round(playerOne["spd"], playerOne["int"], playerTwo["spd"], playerTwo["int"]);
-// console.log(`resultado de roundB ${roundB}<br>`);
-
-// const roundCenter = document.getElementById("rounds")
-// roundCenter.innerHTML = comienzo;
-
-// //Compara resultados de los round para definir ganador o empate
-
-// function batalla(round1, round2) {
-//     if (
-//         (round1 === true && round2 === true) ||
-//         (round1 === true && round2 === null) ||
-//         (round1 === null && round2 === true)
-//     ) {
-//         return true;
-//     } else if (
-//         (round1 === false && round2 === false) ||
-//         (round1 === true && round2 === null) ||
-//         (round1 === null && round2 === false)
-//     ) {
-//         return false;
-//     } else if (
-//         (round1 === true && round2 === false) ||
-//         (round1 === false && round2 === true) ||
-//         (round1 === null && round2 === null)
-//     ) {
-//         return null;
-//     }
-// }
-
-// let winner = batalla(roundA, roundB);
-
-// console.log(`resultado de batalla ${winner}<br>`);
-
-// //------RESULTADO------//
-
-
-// let ganador = "";
-
-// if (winner === true) {
-
-//     ganador = `<p id="finalBaner">${playerOne["nombre"]} ha Ganado!</p>`;
-// } else if (winner === false) {
-//     ganador = `<p id="finalBaner">${playerTwo["nombre"]} a ganado esta batalla</p>`;
-// } else {
-//     ganador = `<p id="finalBaner">${playerOne["nombre"]} y  ${playerTwo["nombre"]} han empatado!</p>`;
-// }
-
-// const final = document.getElementById("final")
-// final.innerHTML = ganador;
-
-
-// //------SALIDA/SALUDO------//
-// /* alert("Gracias por participar!"); */
-
-// //Se dejaron console.log de control en cada salida para chequear el correcto funcionamiento.
+//Se dejaron console.log de control en cada salida para chequear el correcto funcionamiento.
