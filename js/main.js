@@ -1,3 +1,4 @@
+
 //------INGRESO DE PLAYER------//
 
 function peleador(nombre, atq, def, spd, int, id, img, life, universe) {
@@ -50,39 +51,52 @@ function respuestaStart() {
 
 // -------SELECCION DE PERSONAJE-----------/
 
-function solicitarNombre(player) {
-    nombre = prompt("Ingrese el nombre de" + player);
-    return nombre;
+const playerOne = new peleador(0, 0,0,0,0,0,0,0,0);
+
+for (const heroe of heroes) {
+
+//Por cada heroe además de los datos agregamos un botón 
+    $("#seleccion").append(`<div>
+    <div class="heroCard playerOne" id="jugadorUno">
+
+         <div class="avatar crop" id="avatarJugadorUno"><img src="media/characters/${heroe.img}" id="crop" alt="${heroe.nombre}"></div>
+         <div class="lifeBar" id="lifeBar"></div>
+         <div class="Name" id="playerLeftTitle">${heroe.nombre}</div>
+         <button id="btn${heroe.id}">Seleccionar</button>
+    </div>
+
+    </div>`);
+
+    //Asociamos el evento a botón recién creado.
+    $(`#btn${heroe.id}`).on('click', function () {
+        document.getElementById("seleccion").style.display = "none";
+        document.getElementById("game").style.display = "grid";
+        console.log(`Seleccionaste a  ${heroe.nombre}`);
+
+        playerOne["nombre"]=(`${heroe.nombre}`);
+        playerOne["atq"]=(`${heroe.atq}`);
+        playerOne["def"]=(`${heroe.def}`);
+        playerOne["spd"]=(`${heroe.spd}`);
+        playerOne["int"]=(`${heroe.int}`);
+        playerOne["img"]=(`${heroe.img}`);
+        playerOne["id"]=(`${heroe.id}`);
+        playerOne["universe"]=(`${heroe.universe}`);
+        playerOne["life"]=(`${heroe.life}`);
+
+        console.log(playerOne);
+
+        console.log(playerOne["nombre"]);
+        console.log(playerOne["atq"]);
+        console.log(playerOne["def"]);
+        console.log(playerOne["spd"]);
+        console.log(playerOne["int"]);
+        console.log(playerOne["id"]);
+        
+    });
+
+    
+
 }
-
-nombre = solicitarNombre(" su luchador");
-
-//CARGA VALORES ATQ / DEF / SPD / INT
-let atq = prompt("Ingresa tu nivel de ataque");
-atq = parseInt(atq);
-console.log(`atq = ${atq}`)
-let def = prompt("Ingresa tu nivel de defensa");
-def = parseInt(def);
-console.log(`def = ${def}`)
-let spd = prompt("Ingresa tu nivel de velocidad");
-spd = parseInt(spd);
-console.log(`spd = ${spd}`)
-let int = prompt("Ingresa tu nivel de inteligencia");
-int = parseInt(int);
-console.log(`int = ${int}`)
-id = 0;
-
-
-const playerOne = new peleador(nombre, atq, def, spd, int, id, "no-avatar.jfif");
-
-console.log(playerOne["nombre"]);
-console.log(playerOne["atq"]);
-console.log(playerOne["def"]);
-console.log(playerOne["spd"]);
-console.log(playerOne["int"]);
-console.log(playerOne["id"]);
-playerOne.saludoPeleador();
-
 
 // se ordena array que contiene heroes por su poder de ataque
 
@@ -181,20 +195,22 @@ console.log(playerTwo["id"]);
 
 playerTwo.saludoPeleador();
 
-let playerRight = document.createElement("img");
-
-playerRight.src = `media/characters/${playerTwo["img"]}`;
-playerRight.alt = "Jugador Derecho";
-playerRight.id="crop";
-document.getElementById("avatarJugadorDos").appendChild(playerRight);
 
 let playerLeft = document.createElement("img");
 
 playerLeft.src = `media/characters/${playerOne["img"]}`;
 playerLeft.alt = "Jugador Derecho";
 playerLeft.id="crop";
-document.getElementById("avatarJugadorUno").appendChild(playerLeft);
+$("#avatarJugadorUno").append(playerLeft);
+console.log(playerLeft);
+// document.getElementById("avatarJugadorUno").appendChild(;
 
+let playerRight = document.createElement("img");
+
+playerRight.src = `media/characters/${playerTwo["img"]}`;
+playerRight.alt = "Jugador Derecho";
+playerRight.id="crop";
+document.getElementById("avatarJugadorDos").appendChild(playerRight);
 
 
 //------COMBATE------//
@@ -331,11 +347,11 @@ if (winner === true) {
     ganador = `<p id="finalBaner">${playerOne["nombre"]} y  ${playerTwo["nombre"]} han empatado!</p>`;
 }
 
-const final = document.getElementById("final")
-final.innerHTML = ganador;
+// const final = document.getElementById("final")
+// final.innerHTML = ganador;
 
 
 //------SALIDA/SALUDO------//
 /* alert("Gracias por participar!"); */
 
-//Se dejaron console.log de control en cada salida para chequear el correcto funcionamiento.
+//Se dejaron console.log de control en cada salida para chequear el correcto funcionamiento
