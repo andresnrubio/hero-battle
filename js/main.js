@@ -26,9 +26,13 @@ const ironMan = new peleador("Iron Man", 75, 60, 50, 90, 5, "iron-man-earth-616.
 const scarletWitch = new peleador("Scarlet Witch", 13, 12, 20, 90, 6, "scarlet-witch-earth-616.jpg",100, "marvel");
 const saitama = new peleador("Saitama", 100, 95, 85, 50, 7, "saitama-opm.jpg",100,null);
 
+
+const playerOne = new peleador(0,0,0,0,0,0,0,0,0);
+
 // se declara y pushean los objetos dentro del array
 const heroes = []
 
+heroes.push(playerOne)
 heroes.push(batman);
 heroes.push(flash);
 heroes.push(superman);
@@ -51,7 +55,7 @@ function respuestaStart() {
 
 // -------SELECCION DE PERSONAJE-----------/
 
-const playerOne = new peleador(0, 0,0,0,0,0,0,0,0);
+
 
 for (const heroe of heroes) {
 
@@ -59,7 +63,9 @@ for (const heroe of heroes) {
     $("#seleccion").append(`<div>
     <div class="heroCard playerOne" id="jugadorUno">
 
-         <div class="avatar crop" id="avatarJugadorUno"><img src="media/characters/${heroe.img}" id="crop" alt="${heroe.nombre}"></div>
+         <div class="avatar crop" id="avatarJugadorUno">
+         <img src="media/characters/${heroe.img}" id="crop" alt="${heroe.nombre}">
+         </div>
          <div class="lifeBar" id="lifeBar"></div>
          <div class="Name" id="playerLeftTitle">${heroe.nombre}</div>
          <button id="btn${heroe.id}">Seleccionar</button>
@@ -100,10 +106,10 @@ for (const heroe of heroes) {
 
 // se ordena array que contiene heroes por su poder de ataque
 
-const ordenados = heroes.sort((a, b) =>
-    a.atq < b.atq ? 1 : b.atq < a.atq ? -1 : 0
-);
-console.log(ordenados);
+// const ordenados = heroes.sort((a, b) =>
+//     a.atq < b.atq ? 1 : b.atq < a.atq ? -1 : 0
+// );
+// console.log(ordenados);
 
 function randomId(min, max) {
     id = Math.random() * (max - min) + min;
