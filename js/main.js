@@ -50,13 +50,15 @@ let start = document.getElementById("startGame")
 start.addEventListener("click", respuestaStart)
 
 function respuestaStart() {
-    document.getElementById("bienvenida").style.display = "none";
+    // document.getElementById("bienvenida").style.display = "none";
+    $("#bienvenida").fadeOut(); 
+    playerOne = showAndSelect();
+
 }
 
 // -------SELECCION DE PERSONAJE-----------/
 
-
-
+function showAndSelect (){
 for (const heroe of heroes) {
 
 //Por cada heroe además de los datos agregamos un botón 
@@ -89,27 +91,20 @@ for (const heroe of heroes) {
         playerOne["universe"]=(`${heroe.universe}`);
         playerOne["life"]=(`${heroe.life}`);
 
-        console.log(playerOne);
-
-        console.log(playerOne["nombre"]);
-        console.log(playerOne["atq"]);
-        console.log(playerOne["def"]);
-        console.log(playerOne["spd"]);
-        console.log(playerOne["int"]);
-        console.log(playerOne["id"]);
-        
     });
-
-    
-
+}   
+return (playerOne);
 }
 
-// se ordena array que contiene heroes por su poder de ataque
+console.log(playerOne);
+console.log("Hola Juan Carlos");
+console.log(playerOne["nombre"]);
+console.log(playerOne["atq"]);
+console.log(playerOne["def"]);
+console.log(playerOne["spd"]);
+console.log(playerOne["int"]);
+console.log(playerOne["id"]);
 
-// const ordenados = heroes.sort((a, b) =>
-//     a.atq < b.atq ? 1 : b.atq < a.atq ? -1 : 0
-// );
-// console.log(ordenados);
 
 function randomId(min, max) {
     id = Math.random() * (max - min) + min;
@@ -118,6 +113,8 @@ function randomId(min, max) {
     console.log("id " + id)
     return (id);
 }
+
+
 
 const playerTwo = new peleador("playerTwo", 0, 0, 0, 0, 0);
 
@@ -197,10 +194,11 @@ console.log(playerTwo["def"]);
 console.log(playerTwo["spd"]);
 console.log(playerTwo["int"]);
 console.log(playerTwo["id"]);
-
-
 playerTwo.saludoPeleador();
 
+console.log(playerOne["nombre"]);
+
+function setBattle(playerOne,playerTwo){
 
 let playerLeft = document.createElement("img");
 
@@ -217,7 +215,7 @@ playerRight.src = `media/characters/${playerTwo["img"]}`;
 playerRight.alt = "Jugador Derecho";
 playerRight.id="crop";
 document.getElementById("avatarJugadorDos").appendChild(playerRight);
-
+;
 
 //------COMBATE------//
 
@@ -255,12 +253,17 @@ const playerRightTitle = document.getElementById("playerRightTitle");
 playerRightTitle.innerHTML = `${playerTwo["nombre"]}`;
 
 
-const diferencia = (a, b) => a - b;
+
 
 //Ingresar valores de Atq vs Defensa o Velocidad vs Inteligencia devuelve true en caso de victoria de player 1, false en caso de victoria player 2 o null en caso de empate
+}
 
+
+setBattle(playerOne,playerTwo);
 
 let comienzo = "";
+
+const diferencia = (a, b) => a - b;
 
 function round(a, b, c, d) {
 
@@ -352,6 +355,7 @@ if (winner === true) {
 } else {
     ganador = `<p id="finalBaner">${playerOne["nombre"]} y  ${playerTwo["nombre"]} han empatado!</p>`;
 }
+
 
 // const final = document.getElementById("final")
 // final.innerHTML = ganador;
