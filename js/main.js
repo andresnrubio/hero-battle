@@ -1,47 +1,46 @@
+// //------INGRESO DE PLAYER------//
 
-//------INGRESO DE PLAYER------//
+// function peleador(nombre, atq, def, spd, int, id, img, life, universe) {
+//     this.nombre = nombre;
+//     this.atq = atq;
+//     this.def = def;
+//     this.spd = spd;
+//     this.int = int;
+//     this.id = id;
+//     this.img = img;
+//     this.life = life;
+//     this.universe = universe;
+//     this.saludoPeleador = function () {
+//         console.log("Hola soy " + this.nombre + " y ganaré esta pelea")
+//     }
+// }
 
-function peleador(nombre, atq, def, spd, int, id, img, life, universe) {
-    this.nombre = nombre;
-    this.atq = atq;
-    this.def = def;
-    this.spd = spd;
-    this.int = int;
-    this.id = id;
-    this.img = img;
-    this.life = life;
-    this.universe = universe;
-    this.saludoPeleador = function () {
-        console.log("Hola soy " + this.nombre + " y ganaré esta pelea")
-    }
-}
+// //Objetos definidos con la informacion de los personajes
 
-//Objetos definidos con la informacion de los personajes
-
-const batman = new peleador("Batman", 13, 12, 20, 90, 1, "batman-prime-earth.jpg",100, "dc");
-const flash = new peleador("Flash", 13, 12, 20, 90, 2, "the-flash-prime-earth.jpg",100, "dc");
-const superman = new peleador("Superman", 13, 12, 20, 90, 3, "superman-prime-earth.jpg",100, "dc");
-const capitanAmerica = new peleador("Capitan America", 13, 12, 20, 90, 4, "captain-america-earth-616.jpg",100,"marvel");
-const ironMan = new peleador("Iron Man", 75, 60, 50, 90, 5, "iron-man-earth-616.jpg",100, "marvel");
-const scarletWitch = new peleador("Scarlet Witch", 13, 12, 20, 90, 6, "scarlet-witch-earth-616.jpg",100, "marvel");
-const saitama = new peleador("Saitama", 100, 95, 85, 50, 7, "saitama-opm.jpg",100,null);
+// const batman = new peleador("Batman", 13, 12, 20, 90, 1, "batman-prime-earth.jpg",100, "dc");
+// const flash = new peleador("Flash", 13, 12, 20, 90, 2, "the-flash-prime-earth.jpg",100, "dc");
+// const superman = new peleador("Superman", 13, 12, 20, 90, 3, "superman-prime-earth.jpg",100, "dc");
+// const capitanAmerica = new peleador("Capitan America", 13, 12, 20, 90, 4, "captain-america-earth-616.jpg",100,"marvel");
+// const ironMan = new peleador("Iron Man", 75, 60, 50, 90, 5, "iron-man-earth-616.jpg",100, "marvel");
+// const scarletWitch = new peleador("Scarlet Witch", 13, 12, 20, 90, 6, "scarlet-witch-earth-616.jpg",100, "marvel");
+// const saitama = new peleador("Saitama", 100, 95, 85, 50, 7, "saitama-opm.jpg",100,null);
 
 
-const playerOne = new peleador(0,0,0,0,0,0,0,0,0);
+// const playerOne = new peleador(0,0,0,0,0,0,"no-avatar.jfif",0,0);
 
-// se declara y pushean los objetos dentro del array
-const heroes = []
+// // se declara y pushean los objetos dentro del array
+// const heroes = []
 
-heroes.push(playerOne)
-heroes.push(batman);
-heroes.push(flash);
-heroes.push(superman);
-heroes.push(capitanAmerica);
-heroes.push(ironMan);
-heroes.push(scarletWitch);
-heroes.push(saitama);
+// heroes.push(playerOne)
+// heroes.push(batman);
+// heroes.push(flash);
+// heroes.push(superman);
+// heroes.push(capitanAmerica);
+// heroes.push(ironMan);
+// heroes.push(scarletWitch);
+// heroes.push(saitama);
 
-console.log(heroes);
+// console.log(heroes);
 
 //------BIENVENIDA------//
 
@@ -51,60 +50,9 @@ start.addEventListener("click", respuestaStart)
 
 function respuestaStart() {
     // document.getElementById("bienvenida").style.display = "none";
-    $("#bienvenida").fadeOut(); 
-    playerOne = showAndSelect();
-
+    $("#bienvenida").fadeOut();
+    showAndSelect();
 }
-
-// -------SELECCION DE PERSONAJE-----------/
-
-function showAndSelect (){
-for (const heroe of heroes) {
-
-//Por cada heroe además de los datos agregamos un botón 
-    $("#seleccion").append(`<div>
-    <div class="heroCard playerOne" id="jugadorUno">
-
-         <div class="avatar crop" id="avatarJugadorUno">
-         <img src="media/characters/${heroe.img}" id="crop" alt="${heroe.nombre}">
-         </div>
-         <div class="lifeBar" id="lifeBar"></div>
-         <div class="Name" id="playerLeftTitle">${heroe.nombre}</div>
-         <button id="btn${heroe.id}">Seleccionar</button>
-    </div>
-
-    </div>`);
-
-    //Asociamos el evento a botón recién creado.
-    $(`#btn${heroe.id}`).on('click', function () {
-        document.getElementById("seleccion").style.display = "none";
-        document.getElementById("game").style.display = "grid";
-        console.log(`Seleccionaste a  ${heroe.nombre}`);
-
-        playerOne["nombre"]=(`${heroe.nombre}`);
-        playerOne["atq"]=(`${heroe.atq}`);
-        playerOne["def"]=(`${heroe.def}`);
-        playerOne["spd"]=(`${heroe.spd}`);
-        playerOne["int"]=(`${heroe.int}`);
-        playerOne["img"]=(`${heroe.img}`);
-        playerOne["id"]=(`${heroe.id}`);
-        playerOne["universe"]=(`${heroe.universe}`);
-        playerOne["life"]=(`${heroe.life}`);
-
-    });
-}   
-return (playerOne);
-}
-
-console.log(playerOne);
-console.log("Hola Juan Carlos");
-console.log(playerOne["nombre"]);
-console.log(playerOne["atq"]);
-console.log(playerOne["def"]);
-console.log(playerOne["spd"]);
-console.log(playerOne["int"]);
-console.log(playerOne["id"]);
-
 
 function randomId(min, max) {
     id = Math.random() * (max - min) + min;
@@ -198,170 +146,237 @@ playerTwo.saludoPeleador();
 
 console.log(playerOne["nombre"]);
 
-function setBattle(playerOne,playerTwo){
+// -------SELECCION DE PERSONAJE-----------/
 
-let playerLeft = document.createElement("img");
+function setBattle(playerOne, playerTwo) {
 
-playerLeft.src = `media/characters/${playerOne["img"]}`;
-playerLeft.alt = "Jugador Derecho";
-playerLeft.id="crop";
-$("#avatarJugadorUno").append(playerLeft);
-console.log(playerLeft);
-// document.getElementById("avatarJugadorUno").appendChild(;
+    alert(playerOne);
+    let playerLeft = document.createElement("img");
 
-let playerRight = document.createElement("img");
+    playerLeft.src = `media/characters/${playerOne["img"]}`;
+    playerLeft.alt = "Jugador Derecho";
+    playerLeft.id = "crop";
+    $("#avatarJugadorUno").append(playerLeft);
+    console.log(playerLeft);
+    // document.getElementById("avatarJugadorUno").appendChild(;
 
-playerRight.src = `media/characters/${playerTwo["img"]}`;
-playerRight.alt = "Jugador Derecho";
-playerRight.id="crop";
-document.getElementById("avatarJugadorDos").appendChild(playerRight);
-;
+    let playerRight = document.createElement("img");
 
-//------COMBATE------//
+    playerRight.src = `media/characters/${playerTwo["img"]}`;
+    playerRight.alt = "Jugador Derecho";
+    playerRight.id = "crop";
+    document.getElementById("avatarJugadorDos").appendChild(playerRight);;
 
-let botonAtqOne = document.getElementById("btnAtqPlayerOne")
-botonAtqOne.addEventListener("click", respuestaAtqOne)
+    //------COMBATE------//
 
-function respuestaAtqOne() {
-    console.log("Respuesta evento Ataque 1");
-}
-let botonSpdOne = document.getElementById("btnSpdPlayerOne")
-botonSpdOne.addEventListener("click", respuestaSpdOne)
+    let botonAtqOne = document.getElementById("btnAtqPlayerOne")
+    botonAtqOne.addEventListener("click", respuestaAtqOne)
 
-function respuestaSpdOne() {
-    console.log("Respuesta evento Speed 1");
-}
+    function respuestaAtqOne() {
+        console.log("Respuesta evento Ataque 1");
+    }
+    let botonSpdOne = document.getElementById("btnSpdPlayerOne")
+    botonSpdOne.addEventListener("click", respuestaSpdOne)
 
-let botonAtqTwo = document.getElementById("btnAtqlayerTwo")
-botonAtqTwo.addEventListener("click", respuestaAtqTwo)
-
-function respuestaAtqTwo() {
-    console.log("Respuesta evento Ataque 2");
-}
-let botonSpdTwo = document.getElementById("btnSpdPlayerTwo")
-botonSpdTwo.addEventListener("click", respuestaSpdTwo)
-function respuestaSpdTwo() {
-    console.log("Respuesta evento Speed 2");
-}
-
-
-
-const playerLeftTitle = document.getElementById("playerLeftTitle");
-playerLeftTitle.innerHTML = `${playerOne["nombre"]}`;
-
-const playerRightTitle = document.getElementById("playerRightTitle");
-playerRightTitle.innerHTML = `${playerTwo["nombre"]}`;
-
-
-
-
-//Ingresar valores de Atq vs Defensa o Velocidad vs Inteligencia devuelve true en caso de victoria de player 1, false en caso de victoria player 2 o null en caso de empate
-}
-
-
-setBattle(playerOne,playerTwo);
-
-let comienzo = "";
-
-const diferencia = (a, b) => a - b;
-
-function round(a, b, c, d) {
-
-    comienzo += "<p>Comienzo del round! </p>";
-    hit1 = diferencia(a, d);
-    comienzo += "<p>Atacas!</p>";
-    console.log(hit1);
-    if (hit1 > 0) {
-        comienzo += `<p>Hiciste ${hit1} de daño</p>`;
-    } else if (hit1 < 0) {
-        comienzo += `<p>Tu golpe te daño a ti!</p>`;
-    } else {
-        comienzo += `<p>Tu golpe no tuvo efecto!</p>`;
+    function respuestaSpdOne() {
+        console.log("Respuesta evento Speed 1");
     }
 
+    let botonAtqTwo = document.getElementById("btnAtqlayerTwo")
+    botonAtqTwo.addEventListener("click", respuestaAtqTwo)
 
-    hit2 = diferencia(c, b);
-    comienzo += `<p>"Defiendes!"</p>`;
-    if (hit2 > 0) {
-        comienzo += `<p>Recibiste ${hit2} de daño</p>`;
-    } else if (hit2 < 0) {
-        comienzo += `<p>Devolviste el ataque!</p>`;
-    } else {
-        comienzo += `<p>El golpe no tuvo efecto!</p>`;
+    function respuestaAtqTwo() {
+        console.log("Respuesta evento Ataque 2");
+    }
+    let botonSpdTwo = document.getElementById("btnSpdPlayerTwo")
+    botonSpdTwo.addEventListener("click", respuestaSpdTwo)
+
+    function respuestaSpdTwo() {
+        console.log("Respuesta evento Speed 2");
     }
 
 
 
-    if (hit1 > hit2) {
-        return true;
-    } else if (hit2 > hit1) {
-        return false;
-    } else {
-        return null;
-    }
+    const playerLeftTitle = document.getElementById("playerLeftTitle");
+    playerLeftTitle.innerHTML = `${playerOne["nombre"]}`;
+
+    const playerRightTitle = document.getElementById("playerRightTitle");
+    playerRightTitle.innerHTML = `${playerTwo["nombre"]}`;
+
 
 }
 
 
-comienzo += "<p>Round 1</p>";
+function showAndSelect() {
 
-roundA = round(playerOne["atq"], playerOne["def"], playerTwo["atq"], playerTwo["def"]);
-console.log(`resultado de roundA ${roundA}<br>`);
+    const URLJSON = "data/heroes.json"
 
-roundB = round(playerOne["spd"], playerOne["int"], playerTwo["spd"], playerTwo["int"]);
-console.log(`resultado de roundB ${roundB}<br>`);
+    $("body").prepend('<button id="btn1">JSON</button>');
+    //Escuchamos el evento click del botón agregado
+    $("#btn1").click(() => {
+                $.getJSON(URLJSON, function (respuesta, estado) {
+                            if (estado === "success") {
 
-const roundCenter = document.getElementById("rounds")
-roundCenter.innerHTML = comienzo;
+                                for (const heroe of heroes) {
 
-//Compara resultados de los round para definir ganador o empate
+                                    //Por cada heroe además de los datos agregamos un botón 
+                                    $("#seleccion").append(`<div>
+    <div class="heroCard playerOne" id="jugadorUno">
 
-function batalla(round1, round2) {
-    if (
-        (round1 === true && round2 === true) ||
-        (round1 === true && round2 === null) ||
-        (round1 === null && round2 === true)
-    ) {
-        return true;
-    } else if (
-        (round1 === false && round2 === false) ||
-        (round1 === true && round2 === null) ||
-        (round1 === null && round2 === false)
-    ) {
-        return false;
-    } else if (
-        (round1 === true && round2 === false) ||
-        (round1 === false && round2 === true) ||
-        (round1 === null && round2 === null)
-    ) {
-        return null;
-    }
-}
+         <div class="avatar crop" id="avatarJugadorUno">
+         <img src="media/characters/${heroe.img}" id="crop" alt="${heroe.nombre}">
+         </div>
+         <div class="lifeBar" id="lifeBar"></div>
+         <div class="Name" id="playerLeftTitle">${heroe.nombre}</div>
+         <button id="btn${heroe.id}">Seleccionar</button>
+    </div>
+    </div>`);
 
-let winner = batalla(roundA, roundB);
+                                    //Asociamos el evento a botón recién creado.
+                                    $(`#btn${heroe.id}`).on('click', function () {
+                                        document.getElementById("seleccion").style.display = "none";
+                                        document.getElementById("game").style.display = "grid";
+                                        console.log(`Seleccionaste a  ${heroe.nombre}`);
 
-console.log(`resultado de batalla ${winner}<br>`);
+                                        playerOne["nombre"] = (`${heroe.nombre}`);
+                                        playerOne["atq"] = (`${heroe.atq}`);
+                                        playerOne["def"] = (`${heroe.def}`);
+                                        playerOne["spd"] = (`${heroe.spd}`);
+                                        playerOne["int"] = (`${heroe.int}`);
+                                        playerOne["img"] = (`${heroe.img}`);
+                                        playerOne["id"] = (`${heroe.id}`);
+                                        playerOne["universe"] = (`${heroe.universe}`);
+                                        playerOne["life"] = (`${heroe.life}`);
 
-//------RESULTADO------//
+                                        setBattle();
+                                    });
+                                }
 
-
-let ganador = "";
-
-if (winner === true) {
-
-    ganador = `<p id="finalBaner">${playerOne["nombre"]} ha Ganado!</p>`;
-} else if (winner === false) {
-    ganador = `<p id="finalBaner">${playerTwo["nombre"]} a ganado esta batalla</p>`;
-} else {
-    ganador = `<p id="finalBaner">${playerOne["nombre"]} y  ${playerTwo["nombre"]} han empatado!</p>`;
-}
+                            }
 
 
-// const final = document.getElementById("final")
-// final.innerHTML = ganador;
 
 
-//------SALIDA/SALUDO------//
-/* alert("Gracias por participar!"); */
 
-//Se dejaron console.log de control en cada salida para chequear el correcto funcionamiento
+                            console.log(playerOne);
+                            console.log("Hola Juan Carlos");
+                            console.log(playerOne["nombre"]);
+                            console.log(playerOne["atq"]);
+                            console.log(playerOne["def"]);
+                            console.log(playerOne["spd"]);
+                            console.log(playerOne["int"]);
+                            console.log(playerOne["id"]);
+
+
+
+
+                            //Ingresar valores de Atq vs Defensa o Velocidad vs Inteligencia devuelve true en caso de victoria de player 1, false en caso de victoria player 2 o null en caso de empate
+
+
+
+                            setBattle(playerOne, playerTwo);
+
+                            let comienzo = "";
+
+                            const diferencia = (a, b) => a - b;
+
+                            function round(a, b, c, d) {
+
+                                comienzo += "<p>Comienzo del round! </p>";
+                                hit1 = diferencia(a, d);
+                                comienzo += "<p>Atacas!</p>";
+                                console.log(hit1);
+                                if (hit1 > 0) {
+                                    comienzo += `<p>Hiciste ${hit1} de daño</p>`;
+                                } else if (hit1 < 0) {
+                                    comienzo += `<p>Tu golpe te daño a ti!</p>`;
+                                } else {
+                                    comienzo += `<p>Tu golpe no tuvo efecto!</p>`;
+                                }
+
+
+                                hit2 = diferencia(c, b);
+                                comienzo += `<p>"Defiendes!"</p>`;
+                                if (hit2 > 0) {
+                                    comienzo += `<p>Recibiste ${hit2} de daño</p>`;
+                                } else if (hit2 < 0) {
+                                    comienzo += `<p>Devolviste el ataque!</p>`;
+                                } else {
+                                    comienzo += `<p>El golpe no tuvo efecto!</p>`;
+                                }
+
+
+
+                                if (hit1 > hit2) {
+                                    return true;
+                                } else if (hit2 > hit1) {
+                                    return false;
+                                } else {
+                                    return null;
+                                }
+
+                            }
+
+
+                            comienzo += "<p>Round 1</p>";
+
+                            roundA = round(playerOne["atq"], playerOne["def"], playerTwo["atq"], playerTwo["def"]);
+                            console.log(`resultado de roundA ${roundA}<br>`);
+
+                            roundB = round(playerOne["spd"], playerOne["int"], playerTwo["spd"], playerTwo["int"]);
+                            console.log(`resultado de roundB ${roundB}<br>`);
+
+                            const roundCenter = document.getElementById("rounds")
+                            roundCenter.innerHTML = comienzo;
+
+                            //Compara resultados de los round para definir ganador o empate
+
+                            function batalla(round1, round2) {
+                                if (
+                                    (round1 === true && round2 === true) ||
+                                    (round1 === true && round2 === null) ||
+                                    (round1 === null && round2 === true)
+                                ) {
+                                    return true;
+                                } else if (
+                                    (round1 === false && round2 === false) ||
+                                    (round1 === true && round2 === null) ||
+                                    (round1 === null && round2 === false)
+                                ) {
+                                    return false;
+                                } else if (
+                                    (round1 === true && round2 === false) ||
+                                    (round1 === false && round2 === true) ||
+                                    (round1 === null && round2 === null)
+                                ) {
+                                    return null;
+                                }
+                            }
+
+                            let winner = batalla(roundA, roundB);
+
+                            console.log(`resultado de batalla ${winner}<br>`);
+
+                            //------RESULTADO------//
+
+
+                            let ganador = "";
+
+                            if (winner === true) {
+
+                                ganador = `<p id="finalBaner">${playerOne["nombre"]} ha Ganado!</p>`;
+                            } else if (winner === false) {
+                                ganador = `<p id="finalBaner">${playerTwo["nombre"]} a ganado esta batalla</p>`;
+                            } else {
+                                ganador = `<p id="finalBaner">${playerOne["nombre"]} y  ${playerTwo["nombre"]} han empatado!</p>`;
+                            }
+
+
+                            // const final = document.getElementById("final")
+                            // final.innerHTML = ganador;
+
+
+                            //------SALIDA/SALUDO------//
+                            /* alert("Gracias por participar!"); */
+
+                            //Se dejaron console.log de control en cada salida para chequear el correcto funcionamiento

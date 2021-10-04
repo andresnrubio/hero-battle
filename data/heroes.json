@@ -1,0 +1,81 @@
+{
+    "heroes":[
+        {
+            "atq": "13",
+            "def": "12",
+            "id": "1",
+            "img": "batman-prime-earth.jpg",
+            "int": "90",
+            "life": "100",
+            "nombre": "Batman",
+            "spd": "20",
+            "universe": "dc"
+        },
+        {
+            "atq": "13",
+            "def": "12",
+            "id": "2",
+            "img": "the-flash-prime-earth.jpg",
+            "int": "90",
+            "life": "100",
+            "nombre": "Flash",
+            "spd": "20",
+            "universe": "dc"
+        },
+        {
+            "atq": "13",
+            "def": "12",
+            "id": "3",
+            "img": "superman-prime-earth.jpg",
+            "int": "90",
+            "life": "100",
+            "nombre": "Superman",
+            "spd": "20",
+            "universe": "dc"
+        },
+        {
+            "atq": "13",
+            "def": "12",
+            "id": "4",
+            "img": "captain-america-earth-616.jpg",
+            "int": "90",
+            "life": "100",
+            "nombre": "Capitan America",
+            "spd": "20",
+            "universe": "marvel"
+        },
+        {
+            "atq": "75",
+            "def": "60",
+            "id": "5",
+            "img": "iron-man-earth-616.jpg",
+            "int": "90",
+            "life": "100",
+            "nombre": "Iron Man",
+            "spd": "50",
+            "universe": "marvel"
+        },
+        {
+            "atq": "13",
+            "def": "12",
+            "id": "6",
+            "img": "scarlet-witch-earth-616.jpg",
+            "int": "90",
+            "life": "100",
+            "nombre": "Scarlet Witch",
+            "spd": "20",
+            "universe": "marvel"
+        },
+        {
+            "atq": "100",
+            "def": "95",
+            "id": "7",
+            "img": "saitama-opm.jpg",
+            "int": "50",
+            "life": "100",
+            "nombre": "Saitama",
+            "spd": "85",
+            "universe": "null"
+        }
+    ]
+}
