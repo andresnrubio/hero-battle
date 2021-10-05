@@ -6,60 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Desafio Clase 4</title>
+    <title>Hero Battle</title>
 </head>
 
 <body>
-<section id="bienvenida" >
- <h1>Hero Battle</h1>
-<button class="boton" id="startGame">Inicio</button>
-</section> 
+    <section id="bienvenida">
+        <h1>Hero Battle</h1>
+        <button class="boton" id="startGame">Inicio</button>
+    </section>
 
-<section id="seleccion" class="carousel">
+    <section id="seleccion" class="carousel">
 
 
-</section>
+    </section>
 
-        <section  class="cuadro battleGround" id="game">
+    <section class="cuadro battleGround" id="game">
 
-            <div class="heroCard playerOne" id="jugadorUno">
-                <div class="avatar" id="avatarJugadorUno"></div>
-                <div class="lifeBar" id="lifeBar"></div>
-                <div class="Name" id="playerLeftTitle"></div>
-                <div class="atq"><button id="btnAtqPlayerOne">CLICK</button> </div>
-                <div class="spd"><button id="btnSpdPlayerOne">CLICK</button>   </div>
-                <div class="def"></div>
-                <div class="int"></div>
-              </div>
+        <div class="playerOne" id="jugadorUnoBattle">
 
-            </div>
-         
-                <div class="vs">
-                    <img src="media/img/vs-image.png" alt="VS" id="vs">
-                </div>
-       
-            
-    
-            <div class="heroCard playerTwo" id="jugadorDos">
-                <div class="avatar" id="avatarJugadorDos"></div>
-                <div class="lifeBar" id="lifeBar"></div>
-                <div class="Name" id="playerRightTitle"></div>
-                <div class="atq"><button id="btnAtqlayerTwo">CLICK</button></div>
-                <div class="spd"><button id="btnSpdPlayerTwo">CLICK</button>  </div>
-                <div class="def"></div>
-                <div class="int"></div>
-              </div>
-    
-          
-            <div class="combatText" id="rounds"></div>
+        </div>
+
+        </div>
+
+        <div class="vs">
+            <img src="media/img/vs-image.png" alt="VS" id="vs">
+        </div>
+
+
+
+        <div class="playerTwo" id="jugadorDosBattle">
+
+        </div>
+
+
+        <div class="combatText" id="rounds"></div>
         <div id="final"></div>
     </section>
-    
+
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery-migrate-1.4.1.min.js"></script>
     <script src="js/main.js"></script>
-    
-   
+
+
 </body>
 
-</html>`````
+</html>
