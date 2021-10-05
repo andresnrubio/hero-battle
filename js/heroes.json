@@ -76,6 +76,39 @@
             "nombre": "Saitama",
             "spd": "85",
             "universe": "null"
+        },
+        {
+            "atq": "90",
+            "def": "100",
+            "id": "8",
+            "img": "ultron-earth-616.jpeg",
+            "int": "100",
+            "life": "100",
+            "nombre": "Ultron",
+            "spd": "80",
+            "universe": "marvel"
+        },
+        {
+            "atq": "100",
+            "def": "100",
+            "id": "9",
+            "img": "uatu-earth-616.jpeg",
+            "int": "100",
+            "life": "100",
+            "nombre": "Uatu The Watcher",
+            "spd": "100",
+            "universe": "marvel"
+        },
+        {
+            "atq": "25",
+            "def": "30",
+            "id": "10",
+            "img": "eren-yeager-anime.jpeg",
+            "int": "65",
+            "life": "100",
+            "nombre": "Eren Yeager",
+            "spd": "30",
+            "universe": "null"
         }
     ]
 }
