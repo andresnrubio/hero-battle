@@ -32,7 +32,7 @@ function respuestaStart() {
 console.log(playerOne);
 
 function showAndSelect() {
-  fetch("/js/heroes.json")
+  fetch("./js/heroes.json")
     .then((res) => res.json())
     .then((datos) => {
       console.log(datos.heroes);
@@ -72,7 +72,7 @@ function showAndSelect() {
           playerOne["universe"] = `${heroe.universe}`;
           playerOne["life"] = `${heroe.life}`;
 
-          const playerTwo = playerTwoSeleccion();
+          const playerTwo = playerTwoSeleccion(playerOne.id);
         //   console.log(playerTwo);
         //   console.log(
         //     "Jugador 2 " + playerTwo[nombre] + " Jugador 1 " + playerOne.nombre
@@ -82,7 +82,8 @@ function showAndSelect() {
         });
       }
 
-      function playerTwoSeleccion() {
+      function playerTwoSeleccion(playerOne) {
+          
         function randomId(min, max) {
           id = Math.random() * (max - min) + min;
           id = Math.round(id);
@@ -92,18 +93,25 @@ function showAndSelect() {
 
         const totalHeroes = heroes.length;
 
-        const seleccion = randomId(1, totalHeroes);
+        let seleccion = playerOne;
+        let playerTwo = {};
 
-        const playerTwo = heroes.filter(function (element) {
+        while (seleccion === playerOne  ){
+
+        seleccion = randomId(1, totalHeroes);
+
+        playerTwo = heroes.find(function (element) {
+
           return element.id == seleccion;
+
         });
+        }
 
         return playerTwo;
       }
 
       function setBattle(playerOne, playerTwo) {
-        console.log("el player es ", playerOne.nombre);
-
+        
         $("#jugadorUnoBattle").append(
           `
                         <div class="heroCard playerOne" id="jugadorUno">
@@ -112,10 +120,10 @@ function showAndSelect() {
                         </div>
                         <div class="lifeBar" id="lifeBar"></div>
                         <div class="Name" id="playerLeftTitle">${playerOne.nombre}</div>
-                        <button class="atq botonBatalla">Ataque</button>
-                        <button class="spd botonBatalla">Velocidad</button>
-                        <button class="def botonBatalla">Defensa</button>
-                        <button class="int botonBatalla">Inteligente</button>
+                        <button id="btnAtqOne" class="atq botonBatalla">Fuerza</button>
+                        <button id="btnSpdOne" class="spd  botonBatalla">Velocidad</button>
+                        <button id="btnDefOne" class="def  botonBatalla">Defensa</button>
+                        <button id="btnIntOne" class="int  botonBatalla">Inteligencia</button>
                         </div>
                         `
         );
@@ -128,16 +136,63 @@ function showAndSelect() {
                         </div>
                         <div class="lifeBar" id="lifeBar"></div>
                         <div class="Name" id="playerRightTitle">${playerTwo.nombre}</div>
-                        <button class="atq botonBatalla">Ataque</button>
-                        <button class="spd botonBatalla">Velocidad</button>
-                        <button class="def botonBatalla">Defensa</button>
-                        <button class="int botonBatalla">Inteligente</button>
+                        <button id="btnAtqTwo" class="atq botonBatalla">Fuerza</button>
+                        <button id="btnSpdTwo" class="spd botonBatalla">Velocidad</button>
+                        <button id="btnDefTwo" class="def botonBatalla">Defensa</button>
+                        <button id="btnIntTwo" class="int botonBatalla">Inteligencia</button>
                         </div>
                         `
-        );
+        ); 
+        battle (playerOne,playerTwo);                                                             
       }
-    });
-}
+
+
+function battle (playerOne,playerTwo){
+      
+    console.log("el player es ", playerOne.nombre);
+    console.log(playerTwo);
+    console.log("el player dos es ", playerTwo.nombre);
+
+      $(`#btnAtqOne`).on("click", function () {
+        console.log("Atacaste con fuerza")
+      })
+      $(`#btnSpdOne`).on("click", function () {
+        console.log("Te mueves rapido")
+      })
+      $(`#btnDefOne`).on("click", function () {
+        console.log("Te defendiste")
+      })
+      $(`#btnIntOne`).on("click", function () {
+        console.log("Fuiste Inteligente")
+      })
+    
+     $(`#btnAtqTwo`).on("click", function () {
+        console.log("Atacaste con fuerza")
+      })
+
+      $(`#btnSpdTwo`).on("click", function () {
+        console.log("Te mueves rapido")
+      })
+
+      $(`#btnDefTwo`).on("click", function () {
+        console.log("Te defendiste")
+      })
+
+      $(`#btnIntTwo`).on("click", function () {
+        console.log("Fuiste Inteligente")
+      })
+
+    }
+
+    function golpe (atq, spd, def, int){
+
+        ataque directo
+
+        
+    }
+
+    //Cierre Then;
+    })}
 
 //------COMBATE------//
 
