@@ -32,7 +32,16 @@ function respuestaStart() {
 console.log(playerOne);
 
 function showAndSelect() {
+<<<<<<< HEAD
   fetch("./js/heroes.json")
+=======
+  fetch("./js/heroes.json",{
+         headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+  })
+>>>>>>> 3a40ea931058ccd467db42fa629d6b60072e2eaf
     .then((res) => res.json())
     .then((datos) => {
       console.log(datos.heroes);
