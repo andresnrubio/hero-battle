@@ -32,7 +32,7 @@ function respuestaStart() {
 console.log(playerOne);
 
 function showAndSelect() {
-  fetch("heroes.json",{
+  fetch("./heroes.json",{
          headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
